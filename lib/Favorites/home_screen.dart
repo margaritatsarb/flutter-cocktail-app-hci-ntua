@@ -1,18 +1,18 @@
-// screens/home_screen.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../HomePage.dart';
 
 import 'movie_provider.dart';
 import 'my_list_screen.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class Favorites extends StatefulWidget {
+  const Favorites({Key? key}) : super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _FavoritesState createState() => _FavoritesState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _FavoritesState extends State<Favorites> {
   @override
   Widget build(BuildContext context) {
     var movies = context.watch<MovieProvider>().movies;
@@ -20,8 +20,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Favorites'),
+        title: const Text('Cocktailer'),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.home),
+        onPressed: () {
+          Navigator.pop(context,
+              MaterialPageRoute(builder: (context) => const HomePage()));
+        },
+        backgroundColor: Color.fromARGB(255, 230, 57, 18),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: Padding(
         padding: const EdgeInsets.all(15),
         child: Column(
@@ -37,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               icon: const Icon(Icons.favorite),
               label: Text(
-                "Go to my list (${myList.length})",
+                "Favorites (${myList.length})",
                 style: const TextStyle(fontSize: 24),
               ),
               style: ElevatedButton.styleFrom(
@@ -54,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     final currentMovie = movies[index];
                     return Card(
                       key: ValueKey(currentMovie.title),
-                      color: Colors.amberAccent.shade100,
+                      color: Color.fromARGB(19, 255, 47, 0),
                       elevation: 4,
                       child: ListTile(
                         title: Text(currentMovie.title),

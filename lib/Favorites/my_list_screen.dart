@@ -1,7 +1,7 @@
 // screens/my_list_screen.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import '../HomePage.dart';
 import 'movie_provider.dart';
 
 class MyListScreen extends StatefulWidget {
@@ -17,8 +17,17 @@ class _MyListScreenState extends State<MyListScreen> {
     final _myList = context.watch<MovieProvider>().myList;
     return Scaffold(
       appBar: AppBar(
-        title: Text("My List (${_myList.length})"),
+        title: Text("Favorites (${_myList.length})"),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.home),
+        onPressed: () {
+          Navigator.pop(context,
+              MaterialPageRoute(builder: (context) => const HomePage()));
+        },
+        backgroundColor: Color.fromARGB(255, 230, 57, 18),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: ListView.builder(
           itemCount: _myList.length,
           itemBuilder: (_, index) {
