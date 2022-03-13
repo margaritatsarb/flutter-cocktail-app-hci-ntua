@@ -11,11 +11,11 @@ class Answer extends StatelessWidget {
     return Container(
       width: double.infinity,
       child: RaisedButton(
-        color: Color(0xFF00E676),
+        color: Color.fromARGB(255, 255, 0, 128),
         textColor: Colors.white,
         child: Text(answerText),
         onPressed: selectHandler,
-      ), //RaisedButton
-    ); //Container
+      ),
+    );
   }
 }

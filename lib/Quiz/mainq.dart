@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-
+import '../HomePage.dart';
 import './quiz.dart';
 import './result.dart';
+import '../Favorites/home_screen.dart';
+import '../ShoppingList.dart';
 
 class Quizz extends StatefulWidget {
   const Quizz({Key? key}) : super(key: key);
   @override
-  State<StatefulWidget> createState() {
-    return _MyAppState();
-  }
+  State<StatefulWidget> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<Quizz> {
@@ -16,17 +16,17 @@ class _MyAppState extends State<Quizz> {
     {
       'questionText': 'Q1. Which is your favorite season?',
       'answers': [
-        {'text': 'Summer/Spring', 'score': 0},
-        {'text': 'Winter', 'score': 0},
-        {'text': 'Autumn', 'score': 0},
+        {'text': 'Summer/Spring', 'score': 10},
+        {'text': 'Winter', 'score': 20},
+        {'text': 'Autumn', 'score': 30},
       ],
     },
     {
       'questionText': 'Q2. Which taste do you prefer?',
       'answers': [
-        {'text': 'Sweet', 'score': 0},
-        {'text': 'Spicy', 'score': 0},
-        {'text': 'Sour', 'score': 0},
+        {'text': 'Sweet', 'score': 100},
+        {'text': 'Spicy', 'score': 200},
+        {'text': 'Sour', 'score': 300},
       ],
     },
     {
@@ -69,9 +69,65 @@ class _MyAppState extends State<Quizz> {
       home: Scaffold(
         appBar: AppBar(
           title: Text('Cocktailer'),
-          backgroundColor: Colors.deepOrange,
+          titleTextStyle: TextStyle(
+            fontSize: 40.0,
+            fontStyle: FontStyle.italic,
+            color: Color.fromARGB(255, 230, 57, 18),
+          ),
+          centerTitle: true,
+          actionsIconTheme:
+              IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
+          backgroundColor: Colors.white,
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.pop(context,
+                    MaterialPageRoute(builder: (context) => const HomePage()));
+              },
+            ),
+          ],
         ),
-
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.home),
+          onPressed: () {
+            Navigator.pop(context,
+                MaterialPageRoute(builder: (context) => const HomePage()));
+          },
+          backgroundColor: Color.fromARGB(255, 230, 57, 18),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        bottomNavigationBar: BottomAppBar(
+          child: Row(
+            children: [
+              IconButton(
+                  icon: const Icon(
+                    Icons.favorite,
+                    color: Color.fromARGB(255, 221, 19, 4),
+                    size: 30,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Favorites()));
+                  }),
+              Spacer(),
+              IconButton(
+                  icon: const Icon(
+                    Icons.shopping_cart,
+                    color: Color.fromARGB(133, 148, 55, 12),
+                    size: 30,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ShoppingList()));
+                  })
+            ],
+          ),
+        ),
         body: Padding(
           padding: const EdgeInsets.all(30.0),
           child: _questionIndex < _questions.length
@@ -81,9 +137,9 @@ class _MyAppState extends State<Quizz> {
                   questions: _questions,
                 ) //Quiz
               : Result(_totalScore, _resetQuiz),
-        ), //Padding
-      ), //Scaffold
+        ),
+      ),
       debugShowCheckedModeBanner: false,
-    ); //MaterialApp
+    );
   }
 }
