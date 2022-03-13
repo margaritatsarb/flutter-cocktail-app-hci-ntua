@@ -5,6 +5,7 @@ import 'Favorites/movie_provider.dart';
 import 'Favorites/home_screen.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+//import 'package:awesome_package/awesome_package.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
           appBarTheme: const AppBarTheme(
             backgroundColor: Colors.white,
             // This will be applied to the "back" icon
-            iconTheme: IconThemeData(color: Colors.blue),
+            iconTheme: IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
             // This will be applied to the action icon buttons that locates on the right side
             actionsIconTheme:
                 IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
@@ -40,10 +41,13 @@ class MyApp extends StatelessWidget {
             titleTextStyle: TextStyle(
               fontSize: 40.0,
               fontStyle: FontStyle.italic,
+              //fontFamily: 'Raleway',
+              //package: 'awesome_package',
               color: Color.fromARGB(255, 230, 57, 18),
+              //decorationStyle: TextDecorationStyle.wavy,
             ),
           )),
-      home: const HomePage(),
+      home: HomePage(),
     );
   }
 }

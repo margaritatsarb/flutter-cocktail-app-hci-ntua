@@ -628,7 +628,7 @@ class QueensHotelsChow extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bloodymary.png'),
+            Image.asset('assets/images/QueensHotelsChow.jpg'),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -700,7 +700,7 @@ class Smokeandgingersours extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bloodymary.png'),
+            Image.asset('assets/images/Smokeandgingersours.jpg'),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -793,7 +793,7 @@ class Hazelnutespressomartini extends StatelessWidget {
         appBar: AppBar(
           // Override the global settings
           title: Text(
-            'Bloody Mary',
+            'Hazelnut espresso martini',
             style: Theme.of(context)
                 .appBarTheme
                 .titleTextStyle
@@ -844,7 +844,7 @@ class Hazelnutespressomartini extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bloodymary.png'),
+            Image.asset('assets/images/Hazelnutespressomartini.jpg'),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -865,7 +865,7 @@ class Hurricane extends StatelessWidget {
         appBar: AppBar(
           // Override the global settings
           title: Text(
-            'Bloody Mary',
+            'Hurricane',
             style: Theme.of(context)
                 .appBarTheme
                 .titleTextStyle
@@ -916,7 +916,7 @@ class Hurricane extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bloodymary.png'),
+            Image.asset('assets/images/Hurricane.jpg'),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -937,7 +937,7 @@ class Instantrumeggnog extends StatelessWidget {
         appBar: AppBar(
           // Override the global settings
           title: Text(
-            'Bloody Mary',
+            'Instant rum eggnog',
             style: Theme.of(context)
                 .appBarTheme
                 .titleTextStyle
@@ -988,7 +988,7 @@ class Instantrumeggnog extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bloodymary.png'),
+            Image.asset('assets/images/Instantrumeggnog.jpg'),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -1009,7 +1009,7 @@ class Saltedcaramelespressomartini extends StatelessWidget {
         appBar: AppBar(
           // Override the global settings
           title: Text(
-            'Bloody Mary',
+            'Salted caramel espresso martini',
             style: Theme.of(context)
                 .appBarTheme
                 .titleTextStyle
@@ -1060,7 +1060,7 @@ class Saltedcaramelespressomartini extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bloodymary.png'),
+            Image.asset('assets/images/Saltedcaramelespressomartini.jpg'),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -1081,7 +1081,7 @@ class AprilRainCocktail extends StatelessWidget {
         appBar: AppBar(
           // Override the global settings
           title: Text(
-            'Bloody Mary',
+            'April Rain Cocktail',
             style: Theme.of(context)
                 .appBarTheme
                 .titleTextStyle
@@ -1132,7 +1132,7 @@ class AprilRainCocktail extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bloodymary.png'),
+            Image.asset('assets/images/AprilRainCocktail.jpg'),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -1153,7 +1153,7 @@ class Paloma extends StatelessWidget {
         appBar: AppBar(
           // Override the global settings
           title: Text(
-            'Bloody Mary',
+            'Paloma',
             style: Theme.of(context)
                 .appBarTheme
                 .titleTextStyle
@@ -1204,7 +1204,7 @@ class Paloma extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bloodymary.png'),
+            Image.asset('assets/images/Paloma.jpg'),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -1225,7 +1225,7 @@ class Ladygreyrumfizz extends StatelessWidget {
         appBar: AppBar(
           // Override the global settings
           title: Text(
-            'Bloody Mary',
+            'Lady grey rum fizz',
             style: Theme.of(context)
                 .appBarTheme
                 .titleTextStyle
@@ -1276,7 +1276,7 @@ class Ladygreyrumfizz extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bloodymary.png'),
+            Image.asset('assets/images/Ladygreyrumfizz.png'),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -1297,7 +1297,7 @@ class LemonDropMartini extends StatelessWidget {
         appBar: AppBar(
           // Override the global settings
           title: Text(
-            'Bloody Mary',
+            'Lemon Drop Martini',
             style: Theme.of(context)
                 .appBarTheme
                 .titleTextStyle
@@ -1348,7 +1348,7 @@ class LemonDropMartini extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bloodymary.png'),
+            Image.asset('assets/images/LemonDropMartini.jpg'),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -1369,7 +1369,7 @@ class JalapenoMargarita extends StatelessWidget {
         appBar: AppBar(
           // Override the global settings
           title: Text(
-            'Bloody Mary',
+            'Jalapeno Margarita',
             style: Theme.of(context)
                 .appBarTheme
                 .titleTextStyle
@@ -1420,7 +1420,7 @@ class JalapenoMargarita extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bloodymary.png'),
+            Image.asset('assets/images/JalapenoMargarita.jpg'),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -1441,7 +1441,7 @@ class CucumberWasabiMartini extends StatelessWidget {
         appBar: AppBar(
           // Override the global settings
           title: Text(
-            'Bloody Mary',
+            'Cucumber Wasabi Martini',
             style: Theme.of(context)
                 .appBarTheme
                 .titleTextStyle
@@ -1492,7 +1492,7 @@ class CucumberWasabiMartini extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bloodymary.png'),
+            Image.asset('assets/images/CucumberWasabiMartini.jpg'),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -1513,7 +1513,7 @@ class MangoSpiceCocktail extends StatelessWidget {
         appBar: AppBar(
           // Override the global settings
           title: Text(
-            'Bloody Mary',
+            'Mango Spice Cocktail',
             style: Theme.of(context)
                 .appBarTheme
                 .titleTextStyle
@@ -1564,7 +1564,7 @@ class MangoSpiceCocktail extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bloodymary.png'),
+            Image.asset('assets/images/MangoSpiceCocktail.jpg'),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -1585,7 +1585,7 @@ class SweetHeatCocktail extends StatelessWidget {
         appBar: AppBar(
           // Override the global settings
           title: Text(
-            'Bloody Mary',
+            'Sweet Heat Cocktail',
             style: Theme.of(context)
                 .appBarTheme
                 .titleTextStyle
@@ -1636,7 +1636,7 @@ class SweetHeatCocktail extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bloodymary.png'),
+            Image.asset('assets/images/SweetHeatCocktail.jpg'),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -1657,7 +1657,7 @@ class TequilaCocoaCaliente extends StatelessWidget {
         appBar: AppBar(
           // Override the global settings
           title: Text(
-            'Bloody Mary',
+            'Tequila Cocoa Caliente',
             style: Theme.of(context)
                 .appBarTheme
                 .titleTextStyle
@@ -1708,7 +1708,7 @@ class TequilaCocoaCaliente extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bloodymary.png'),
+            Image.asset('assets/images/TequilaCocoaCaliente.jpg'),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -1729,7 +1729,7 @@ class Firecracker extends StatelessWidget {
         appBar: AppBar(
           // Override the global settings
           title: Text(
-            'Bloody Mary',
+            'Firecracker',
             style: Theme.of(context)
                 .appBarTheme
                 .titleTextStyle
@@ -1780,7 +1780,7 @@ class Firecracker extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bloodymary.png'),
+            Image.asset('assets/images/Firecracker.jpg'),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -1801,7 +1801,7 @@ class SpicedHurricane extends StatelessWidget {
         appBar: AppBar(
           // Override the global settings
           title: Text(
-            'Bloody Mary',
+            'Spiced Hurricane',
             style: Theme.of(context)
                 .appBarTheme
                 .titleTextStyle
@@ -1852,7 +1852,7 @@ class SpicedHurricane extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bloodymary.png'),
+            Image.asset('assets/images/SpicedHurricane.jpg'),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -1873,7 +1873,7 @@ class SpicyPaloma extends StatelessWidget {
         appBar: AppBar(
           // Override the global settings
           title: Text(
-            'Bloody Mary',
+            'Spicy Paloma',
             style: Theme.of(context)
                 .appBarTheme
                 .titleTextStyle
@@ -1924,7 +1924,7 @@ class SpicyPaloma extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bloodymary.png'),
+            Image.asset('assets/images/SpicyPaloma.jpg'),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Listt.dart';
 import 'Cocktailrecipes.dart';
-import 'Favorites/mainf.dart';
+import 'Favorites/home_screen.dart';
 import 'ShoppingList.dart';
 import 'Quiz/mainq.dart';
 
@@ -16,63 +15,123 @@ class HomePage extends StatelessWidget {
             style: Theme.of(context).appBarTheme.titleTextStyle,
           ),
           actions: [
-            IconButton(
-              icon: const Icon(Icons.list),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Listt()));
-              },
-            ),
+            PopupMenuButton(
+                icon: Icon(Icons.list),
+                itemBuilder: (context) {
+                  return [
+                    PopupMenuItem<int>(
+                      value: 0,
+                      child: Text("Quiz"),
+                    ),
+                    PopupMenuItem<int>(
+                      value: 1,
+                      child: Text("Cocktail Recipes"),
+                    ),
+                    PopupMenuItem<int>(
+                      value: 2,
+                      child: Text("Shopping List"),
+                    ),
+                    PopupMenuItem<int>(
+                      value: 3,
+                      child: Text("Favorites"),
+                    ),
+                  ];
+                },
+                onSelected: (value) {
+                  if (value == 0) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const Quizz()));
+                  } else if (value == 1) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Cocktailrecipes()));
+                  } else if (value == 2) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ShoppingList()));
+                  } else if (value == 3) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Favorites()));
+                  }
+                }),
           ],
         ),
-        body: Center(
-            child: Stack(
-          children: <Widget>[
-            Align(
-              alignment: Alignment.bottomLeft,
-              child: IconButton(
-                  icon: const Icon(Icons.favorite),
+        bottomNavigationBar: BottomAppBar(
+          child: Row(
+            children: [
+              IconButton(
+                  icon: const Icon(
+                    Icons.favorite,
+                    color: Color.fromARGB(255, 221, 19, 4),
+                    size: 30,
+                  ),
                   onPressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const Favorites()));
                   }),
-            ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: IconButton(
-                  icon: const Icon(Icons.shopping_cart),
+              Spacer(),
+              IconButton(
+                  icon: const Icon(
+                    Icons.shopping_cart,
+                    color: Color.fromARGB(133, 148, 55, 12),
+                    size: 30,
+                  ),
                   onPressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const ShoppingList()));
-                  }),
-            ),
+                  })
+            ],
+          ),
+        ),
+        body: Center(
+            child: Stack(
+          children: <Widget>[
+            Image.asset('assets/images/bulb.jpg'),
             Align(
-              alignment: Alignment(0, -0.1),
+              alignment: Alignment(0, -0.5),
               child: ElevatedButton(
-                  child: const Text(
-                    'Quiz',
-                  ),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const Quizz()));
-                  }),
+                child: const Text(
+                  'Quiz',
+                ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Quizz()));
+                },
+                style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 230, 57, 18),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 40, vertical: 20),
+                    textStyle: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.bold)),
+              ),
             ),
             Align(
               alignment: Alignment(0, 0.1),
               child: ElevatedButton(
-                  child: const Text(
-                    'Cocktail\n recipes',
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const Cocktailrecipes()));
-                  }),
+                child: const Text(
+                  'Cocktail\n recipes',
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Cocktailrecipes()));
+                },
+                style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 230, 57, 18),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 40, vertical: 20),
+                    textStyle: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.bold)),
+              ),
             ),
           ],
         )));
