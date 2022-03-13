@@ -20,12 +20,13 @@ class _FavoritesState extends State<Favorites> {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
         title: const Text('Cocktailer'),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.home),
         onPressed: () {
-          Navigator.pop(context,
+          Navigator.push(context,
               MaterialPageRoute(builder: (context) => const HomePage()));
         },
         backgroundColor: Color.fromARGB(255, 230, 57, 18),

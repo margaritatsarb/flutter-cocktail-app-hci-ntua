@@ -131,7 +131,7 @@ class Result extends StatelessWidget {
             child: Text(
               'Restart Quiz!',
             ),
-            textColor: Color.fromARGB(255, 255, 0, 128),
+            textColor: Color.fromARGB(255, 230, 57, 18),
             onPressed: resetHandler,
           ),
           ElevatedButton(
@@ -262,7 +262,7 @@ class Result extends StatelessWidget {
               }
             },
             style: ElevatedButton.styleFrom(
-                primary: Color.fromARGB(255, 255, 0, 128),
+                primary: Color.fromARGB(255, 230, 57, 18),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                 textStyle:

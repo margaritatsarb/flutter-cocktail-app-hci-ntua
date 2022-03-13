@@ -22,7 +22,7 @@ class _MyListScreenState extends State<MyListScreen> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.home),
         onPressed: () {
-          Navigator.pop(context,
+          Navigator.push(context,
               MaterialPageRoute(builder: (context) => const HomePage()));
         },
         backgroundColor: Color.fromARGB(255, 230, 57, 18),

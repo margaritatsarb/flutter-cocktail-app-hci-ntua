@@ -10,6 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Cocktailer',
             style: Theme.of(context).appBarTheme.titleTextStyle,
@@ -21,7 +22,10 @@ class HomePage extends StatelessWidget {
                   return [
                     PopupMenuItem<int>(
                       value: 0,
-                      child: Text("Quiz"),
+                      child: Text(
+                        "Quiz",
+                        style: TextStyle(fontFamily: 'RockSalt'),
+                      ),
                     ),
                     PopupMenuItem<int>(
                       value: 1,

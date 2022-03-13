@@ -10,6 +10,7 @@ class Cocktailrecipes extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Cocktail Recipes',
             style: Theme.of(context).appBarTheme.titleTextStyle,

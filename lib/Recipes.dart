@@ -9,10 +9,10 @@ class Flutter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Flutter',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -70,8 +70,8 @@ class Flutter extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 50 ml Reposado tequila\n \u2022 25 ml Λικέρ καφέ\n \u2022 35 ml Χυμός από ανανά\n \u2022 4 drop Daquiri bitters (Προαιρετικά)',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                ' \u2022 50 ml Reposado tequila\n \u2022 25 ml Coffe Liquer\n \u2022 35 ml Pineapple juice\n \u2022 4 drop Daquiri bitters (optional)',
+                style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
           ],
@@ -85,10 +85,10 @@ class Mojito extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Mojito',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -146,8 +146,8 @@ class Mojito extends StatelessWidget {
               //alignment: Alignment(0, -0.2),
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 2 ounces white rum\n \u2022 1 ounch fresh juice\n \u2022 5 mint leaves, more for garnice',
-                style: TextStyle(fontSize: 25),
+                ' \u2022 2 ounces white rum\n \u2022 1 ounch fresh juice\n \u2022 5 mint leaves, more for garnice',
+                style: TextStyle(fontSize: 20),
               ),
             ),
           ],
@@ -161,9 +161,10 @@ class VodkaMartini extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Vodka Martini',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -220,8 +221,8 @@ class VodkaMartini extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 2 1/2 ounces vodka\n \u2022 1/2 ounce dry vermouth\n \u2022 1 dash orange bitters',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                ' \u2022 2 1/2 ounces vodka\n \u2022 1/2 ounce dry vermouth\n \u2022 1 dash orange bitters',
+                style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
           ],
@@ -235,13 +236,22 @@ class PinaColantua extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Pina Colantua',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.home),
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const HomePage()));
+          },
+          backgroundColor: Color.fromARGB(255, 230, 57, 18),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         bottomNavigationBar: BottomAppBar(
           child: Row(
             children: [
@@ -286,8 +296,8 @@ class PinaColantua extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 6 ounces white rum \n \u2022 6 ounces cream of coconut\n  \u2022 6 ounces pineapple juice\n \u2022 1/2 cup frozen pineapple chunks \n \u2022 4 cups ice\n \u2022 4 ounces golden or añejo rum\n \u2022 Pineapple leaves or wedges',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                ' \u2022 6 ounces white rum \n \u2022 6 ounces cream of coconut\n \u2022 6 ounces pineapple juice\n \u2022 1/2 cup frozen pineapple chunks \n \u2022 4 cups ice\n \u2022 4 ounces golden or añejo rum\n \u2022 Pineapple leaves or wedges',
+                style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
           ],
@@ -301,10 +311,10 @@ class Cosmopolitan extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Cosmopolitan',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -361,8 +371,8 @@ class Cosmopolitan extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                  '\n \u2022 45ml Vodka\n \u2022 15ml Triple sec liqueur\n \u2022 30ml Cranberry juice\n \u2022 10ml Lime juice',
-                  style: TextStyle(fontSize: 25, color: Colors.white)),
+                  ' \u2022 45ml Vodka\n \u2022 15ml Triple sec liqueur\n \u2022 30ml Cranberry juice\n \u2022 10ml Lime juice',
+                  style: TextStyle(fontSize: 20, color: Colors.white)),
             ),
           ],
         )));
@@ -375,10 +385,10 @@ class Margarita extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Margarita',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -435,8 +445,8 @@ class Margarita extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 45ml Blanco tequila\n \u2022 25ml Triple sec liqueur\n \u2022 25ml Lime juice\n \u2022 5ml Agave syrup',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                ' \u2022 45ml Blanco tequila\n \u2022 25ml Triple sec liqueur\n \u2022 25ml Lime juice\n \u2022 5ml Agave syrup',
+                style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
           ],
@@ -450,10 +460,10 @@ class MaiTai extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Mai Tai',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -510,8 +520,8 @@ class MaiTai extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 45ml White Rum\n \u2022 25ml Cointreau Liqueur\n \u2022 25ml Lime Juice\n \u2022 50ml Pineapple Juice ',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                ' \u2022 45ml White Rum\n \u2022 25ml Cointreau Liqueur\n \u2022 25ml Lime Juice\n \u2022 50ml Pineapple Juice ',
+                style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
           ],
@@ -525,10 +535,10 @@ class Negroni extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Negroni',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -585,8 +595,8 @@ class Negroni extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 30ml Tequila\n \u2022 30ml Italian red bitter liqueur\n \u2022 30ml Sweet Vermouth',
-                style: TextStyle(fontSize: 25, color: Colors.black),
+                ' \u2022 30ml Tequila\n \u2022 30ml Italian red bitter liqueur\n \u2022 30ml Sweet Vermouth',
+                style: TextStyle(fontSize: 20, color: Colors.black),
               ),
             ),
           ],
@@ -600,10 +610,10 @@ class QueensHotelsChow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Queens Hotels Chow',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -660,8 +670,8 @@ class QueensHotelsChow extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 45ml Vodka\n \u2022 15ml Massenez Pomme Verte \n \u2022 20ml lemon juice \n \u2022 15ml spiced rhubarb syrup\n \u2022 6 mint leaves \n \u2022 15ml aquafaba',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                ' \u2022 45ml Vodka\n \u2022 15ml Massenez Pomme Verte \n \u2022 20ml lemon juice \n \u2022 15ml spiced rhubarb syrup\n \u2022 6 mint leaves \n \u2022 15ml aquafaba',
+                style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
           ],
@@ -675,10 +685,10 @@ class Smokeandgingersours extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Smoke and ginger sours',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -735,8 +745,8 @@ class Smokeandgingersours extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 5mm piece ginger\n \u2022 50ml Tequila\n \u2022 25ml lemon juice, plus lemon slice to garnish\n \u2022 15ml agave syrup\n \u2022 2 dashes Angostura Bitters ',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                ' \u2022 5mm piece ginger\n \u2022 50ml Tequila\n \u2022 25ml lemon juice, plus lemon slice to garnish\n \u2022 15ml agave syrup\n \u2022 2 dashes Angostura Bitters ',
+                style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
           ],
@@ -750,10 +760,10 @@ class BloodyMary extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Bloody Mary',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -810,8 +820,8 @@ class BloodyMary extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 60ml Vodka\n \u2022 120ml Tomato Juice\n \u2022 15ml Lemon Juice\n \u2022 5 drops Tabasco\n \u2022 3 drops Worcestershire sauce\n \u2022 Pepper',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                ' \u2022 60ml Vodka\n \u2022 120ml Tomato Juice\n \u2022 15ml Lemon Juice\n \u2022 5 drops Tabasco\n \u2022 3 drops Worcestershire sauce\n \u2022 Pepper',
+                style: TextStyle(fontSize: 20, color: Colors.black),
               ),
             ),
           ],
@@ -825,10 +835,10 @@ class Hazelnutespressomartini extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Hazelnut espresso martini',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -885,8 +895,8 @@ class Hazelnutespressomartini extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 2 tbs tequila\n \u2022 1 1/2 tbs espresso \n \u2022 1 tbs hazelnut liqueur\n \u2022 Pinch finely grated orange zest\n \u2022 Crushed ice\n \u2022 Finely chopped roasted hazelnuts & coffee beans, to serve',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                ' \u2022 2 tbs tequila\n \u2022 1 1/2 tbs espresso \n \u2022 1 tbs hazelnut liqueur\n \u2022 Pinch finely grated orange zest\n \u2022 Crushed ice\n \u2022 Finely chopped roasted hazelnuts & coffee beans, to serve',
+                style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
           ],
@@ -900,10 +910,10 @@ class Hurricane extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Hurricane',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -960,8 +970,8 @@ class Hurricane extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 Dark rum\n \u2022 Light rum\n \u2022 Orange juice\n \u2022 Lime juice\n \u2022 Passion fruit syrup\n \u2022 Grenadine ',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                ' \u2022 Dark rum\n \u2022 Light rum\n \u2022 Orange juice\n \u2022 Lime juice\n \u2022 Passion fruit syrup\n \u2022 Grenadine ',
+                style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
           ],
@@ -975,10 +985,10 @@ class Instantrumeggnog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Instant rum eggnog',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -1035,8 +1045,8 @@ class Instantrumeggnog extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 1l vanilla ice cream, melted\n \u2022 3/4 cup rum\n \u2022 1 tsp vanilla bean extract\n \u2022 1 tsp each ginger and cinnamon, plus extra to serve\n \u2022 ½ tsp freshly grated nutmeg, plus extra to serve',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                ' \u2022 1l vanilla ice cream, melted\n \u2022 3/4 cup rum\n \u2022 1 tsp vanilla bean extract\n \u2022 1 tsp each ginger and cinnamon, plus extra to serve\n \u2022 ½ tsp freshly grated nutmeg, plus extra to serve',
+                style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
           ],
@@ -1050,10 +1060,10 @@ class Saltedcaramelespressomartini extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Salted caramel espresso martini',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -1111,8 +1121,8 @@ class Saltedcaramelespressomartini extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 1 tbs store-bought caramel\n \u2022 50ml espresso, cooled\n \u2022 50ml coffee liqueur (we used Kahlua)\n \u2022 100ml vodka',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                ' \u2022 1 tbs store-bought caramel\n \u2022 50ml espresso, cooled\n \u2022 50ml coffee liqueur (we used Kahlua)\n \u2022 100ml vodka',
+                style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
           ],
@@ -1126,10 +1136,10 @@ class AprilRainCocktail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'April Rain Cocktail',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -1186,8 +1196,8 @@ class AprilRainCocktail extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 2 ounces vodka\n \u2022 1/2 ounce dry vermouth\n \u2022 1/2 ounce freshly squeezed lime juice\n \u2022 Lime peel, for garnish ',
-                style: TextStyle(fontSize: 25, color: Colors.black),
+                ' \u2022 2 ounces vodka\n \u2022 1/2 ounce dry vermouth\n \u2022 1/2 ounce freshly squeezed lime juice\n \u2022 Lime peel, for garnish ',
+                style: TextStyle(fontSize: 20, color: Colors.black),
               ),
             ),
           ],
@@ -1201,10 +1211,10 @@ class Paloma extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Paloma',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -1261,8 +1271,8 @@ class Paloma extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 Tequila\n \u2022 Grapefruit juice\n \u2022 Lime juice\n \u2022 Maple syrup or simple syrup \n \u2022 Soda water',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                ' \u2022 Tequila\n \u2022 Grapefruit juice\n \u2022 Lime juice\n \u2022 Maple syrup or simple syrup \n \u2022 Soda water',
+                style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
           ],
@@ -1276,10 +1286,10 @@ class Ladygreyrumfizz extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Lady grey rum fizz',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -1336,8 +1346,8 @@ class Ladygreyrumfizz extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 2/3 cup (165ml) rum\n \u2022 2/3 cup (165ml) lemon juice\n \u2022 4 eggwhites (optional)\n \u2022 Ice cubes\n \u2022 3 cups (750ml) chilled prosecco\n \u2022 Edible flowers (optional), to serve\n LADY GREY SYRUP\n \u2022 1/2 cup (110g) caster sugar\n \u2022 1 Lady Grey tea bag\n \u2022 4 juniper berries, bruised\n \u2022 2 strips pared lemon rind, thinly sliced',
-                style: TextStyle(fontSize: 25, color: Colors.black),
+                ' \u2022 2/3 cup (165ml) rum\n \u2022 2/3 cup (165ml) lemon juice\n \u2022 4 eggwhites (optional)\n \u2022 Ice cubes\n \u2022 3 cups (750ml) chilled prosecco\n \u2022 Edible flowers (optional), to serve\n LADY GREY SYRUP\n \u2022 1/2 cup (110g) caster sugar\n \u2022 1 Lady Grey tea bag\n \u2022 4 juniper berries, bruised\n \u2022 2 strips pared lemon rind, thinly sliced',
+                style: TextStyle(fontSize: 20, color: Colors.black),
               ),
             ),
           ],
@@ -1351,10 +1361,10 @@ class LemonDropMartini extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Lemon Drop Martini',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -1411,8 +1421,8 @@ class LemonDropMartini extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 Citron vodka or standard vodka\n \u2022 Cointreau or triple sec\n \u2022 Lemon juice\n \u2022 Simple syrup or maple syrup',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                ' \u2022 Citron vodka or standard vodka\n \u2022 Cointreau or triple sec\n \u2022 Lemon juice\n \u2022 Simple syrup or maple syrup',
+                style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
           ],
@@ -1426,10 +1436,10 @@ class JalapenoMargarita extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Jalapeno Margarita',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -1486,8 +1496,8 @@ class JalapenoMargarita extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 1 jalapeño pepper, seeds removed and sliced\n \u2022 1 1/2 ounces reposado tequila\n \u2022 1/2 ounce brandy-based orange liqueur\n \u2022 1 ounce freshly squeezed lime juice\n \u2022 1/2 teaspoon agave nectar\n \u2022 1 dash orange bitters\n \u2022 Jalapeño slice, for garnish',
-                style: TextStyle(fontSize: 25, color: Colors.black),
+                ' \u2022 1 jalapeño pepper, seeds removed and sliced\n \u2022 1 1/2 ounces reposado tequila\n \u2022 1/2 ounce brandy-based orange liqueur\n \u2022 1 ounce freshly squeezed lime juice\n \u2022 1/2 teaspoon agave nectar\n \u2022 1 dash orange bitters\n \u2022 Jalapeño slice, for garnish',
+                style: TextStyle(fontSize: 20, color: Colors.black),
               ),
             ),
           ],
@@ -1501,10 +1511,10 @@ class CucumberWasabiMartini extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Cucumber Wasabi Martini',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -1561,8 +1571,8 @@ class CucumberWasabiMartini extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 4 slices cucumber, divided\n \u2022 1 pea-sized dollop wasabi paste\n \u2022 1/2 ounce simple syrup\n \u2022 1 1/2 ounces gin (rum)\n \u2022 1/2 ounce lemon juice',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                ' \u2022 4 slices cucumber, divided\n \u2022 1 pea-sized dollop wasabi paste\n \u2022 1/2 ounce simple syrup\n \u2022 1 1/2 ounces gin (rum)\n \u2022 1/2 ounce lemon juice',
+                style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
           ],
@@ -1576,10 +1586,10 @@ class MangoSpiceCocktail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Mango Spice Cocktail',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -1636,8 +1646,8 @@ class MangoSpiceCocktail extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 1 ounce mango nectar\n \u2022 3 slices jalapeño pepper, divided\n \u2022 1/2 ounce agave nectar\n \u2022 1 1/2 ounces mango vodka\n \u2022 3/4 ounce freshly squeezed lime juice\n \u2022 1 dash orange bitters',
-                style: TextStyle(fontSize: 25, color: Colors.black),
+                ' \u2022 1 ounce mango nectar\n \u2022 3 slices jalapeño pepper, divided\n \u2022 1/2 ounce agave nectar\n \u2022 1 1/2 ounces mango vodka\n \u2022 3/4 ounce freshly squeezed lime juice\n \u2022 1 dash orange bitters',
+                style: TextStyle(fontSize: 20, color: Colors.black),
               ),
             ),
           ],
@@ -1651,10 +1661,10 @@ class SweetHeatCocktail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Sweet Heat Cocktail',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -1711,8 +1721,8 @@ class SweetHeatCocktail extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 1 slice habanero pepper, no seeds\n \u2022 1 1/2 ounces ginger vodka\n \u2022 3/4 ounce agave nectar\n \u2022 3/4 ounce freshly squeezed lime juice\n \u2022 Candied ginger, for garnish',
-                style: TextStyle(fontSize: 25, color: Colors.black),
+                ' \u2022 1 slice habanero pepper, no seeds\n \u2022 1 1/2 ounces ginger vodka\n \u2022 3/4 ounce agave nectar\n \u2022 3/4 ounce freshly squeezed lime juice\n \u2022 Candied ginger, for garnish',
+                style: TextStyle(fontSize: 20, color: Colors.black),
               ),
             ),
           ],
@@ -1726,10 +1736,10 @@ class TequilaCocoaCaliente extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Tequila Cocoa Caliente',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -1786,8 +1796,8 @@ class TequilaCocoaCaliente extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n For the Cinnamon-Serrano-Infused Tequila:\n \u2022 1 (750-milliliter) bottle aged tequila\n \u2022 2 cinnamon sticks\n \u2022 1 whole serrano pepper\n For the Cocktail:\n \u20221 cup milk\n \u2022 2/3 tablet Mexican table chocolate, about 1 ounce\n \u2022 1 1/2 ounces cinnamon-serrano reposado tequila\n \u2022 Cinnamon stick, for garnish\n \u2022 Chili pepper, for garnish',
-                style: TextStyle(fontSize: 25, color: Colors.green),
+                ' For the Cinnamon-Serrano-Infused Tequila:\n \u2022 1 (750-milliliter) bottle aged tequila\n \u2022 2 cinnamon sticks\n \u2022 1 whole serrano pepper\n For the Cocktail:\n \u20221 cup milk\n \u2022 2/3 tablet Mexican table chocolate, about 1 ounce\n \u2022 1 1/2 ounces cinnamon-serrano reposado tequila\n \u2022 Cinnamon stick, for garnish\n \u2022 Chili pepper, for garnish',
+                style: TextStyle(fontSize: 20, color: Colors.green),
               ),
             ),
           ],
@@ -1801,10 +1811,10 @@ class Firecracker extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Firecracker',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -1861,8 +1871,8 @@ class Firecracker extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 2 1-inch-cubed watermelon chunks\n \u2022 1 1/2 ounces aged rum\n \u2022 1/2 ounce triple sec\n \u2022 1/2 ounce lime juice, freshly squeezed\n \u2022 1/2 ounce simple syrup\n \u2022 1/6 teaspoon cayenne pepper\n \u2022 Garnish: lime wedge',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                ' \u2022 2 1-inch-cubed watermelon chunks\n \u2022 1 1/2 ounces aged rum\n \u2022 1/2 ounce triple sec\n \u2022 1/2 ounce lime juice, freshly squeezed\n \u2022 1/2 ounce simple syrup\n \u2022 1/6 teaspoon cayenne pepper\n \u2022 Garnish: lime wedge',
+                style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
           ],
@@ -1876,10 +1886,10 @@ class SpicedHurricane extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Spiced Hurricane',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -1936,8 +1946,8 @@ class SpicedHurricane extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022.75 oz spiced rum.\n \u2022.75 oz white rum.\n \u2022 1 oz orange juice.\n \u2022 1 oz lime juice.\n \u2022.25 oz grenadine.\n \u2022 ice.\n \u2022 orange slice and cherry for garnish',
-                style: TextStyle(fontSize: 25, color: Colors.black),
+                ' \u2022.75 oz spiced rum.\n \u2022.75 oz white rum.\n \u2022 1 oz orange juice.\n \u2022 1 oz lime juice.\n \u2022.25 oz grenadine.\n \u2022 ice.\n \u2022 orange slice and cherry for garnish',
+                style: TextStyle(fontSize: 20, color: Colors.black),
               ),
             ),
           ],
@@ -1951,10 +1961,10 @@ class SpicyPaloma extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          // Override the global settings
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Spicy Paloma',
-            style: TextStyle(fontSize: 25),
+            style: TextStyle(fontSize: 20),
           ),
           centerTitle: true,
         ),
@@ -2011,8 +2021,8 @@ class SpicyPaloma extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
-                '\n \u2022 1 oz tequila.\n \u2022 3 oz fresh grapefruit juice strained.\n \u2022 1 oz jalapeño simple syrup.\n \u2022 1 lime Youll only need a squeeze!\n \u2022 Splash of grapefruit soda water We used La Croix, but you can also use regular soda water.\n \u2022 1 jalapeño slice and sugar and sea salt mixture for garnishing. ',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                ' \u2022 1 oz tequila.\n \u2022 3 oz fresh grapefruit juice strained.\n \u2022 1 oz jalapeño simple syrup.\n \u2022 1 lime Youll only need a squeeze!\n \u2022 Splash of grapefruit soda water We used La Croix, but you can also use regular soda water.\n \u2022 1 jalapeño slice and sugar and sea salt mixture for garnishing. ',
+                style: TextStyle(fontSize: 20, color: Colors.white),
               ),
             ),
           ],

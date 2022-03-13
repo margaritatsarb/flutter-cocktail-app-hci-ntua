@@ -127,6 +127,9 @@ class _HomePageState extends State<ShoppingList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        actionsIconTheme:
+            IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
         title: const Text('Shopping List'),
       ),
       body: _items.isEmpty

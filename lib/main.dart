@@ -5,7 +5,6 @@ import 'Favorites/cocktail_provider.dart';
 import 'Favorites/home_screen.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-//import 'package:awesome_package/awesome_package.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,7 +13,7 @@ void main() async {
   await Hive.openBox('shopping_box');
   runApp(ChangeNotifierProvider<CocktailProvider>(
     child: const MyApp(),
-    create: (_) => CocktailProvider(), // Create a new ChangeNotifier object
+    create: (_) => CocktailProvider(),
   ));
 }
 
@@ -24,7 +23,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Remove the debug banner
       debugShowCheckedModeBanner: false,
       title: 'Cocktailer',
       theme: ThemeData(
@@ -32,9 +30,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.deepOrange,
           appBarTheme: const AppBarTheme(
             backgroundColor: Colors.white,
-            // This will be applied to the "back" icon
             iconTheme: IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
-            // This will be applied to the action icon buttons that locates on the right side
             actionsIconTheme:
                 IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
             centerTitle: true,
@@ -42,10 +38,8 @@ class MyApp extends StatelessWidget {
             titleTextStyle: TextStyle(
               fontSize: 40.0,
               fontStyle: FontStyle.italic,
-              //fontFamily: 'Raleway',
-              //package: 'awesome_package',
+              fontFamily: 'RockSalt',
               color: Color.fromARGB(255, 230, 57, 18),
-              //decorationStyle: TextDecorationStyle.wavy,
             ),
           )),
       home: HomePage(),
