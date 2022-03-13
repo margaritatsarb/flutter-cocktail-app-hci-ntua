@@ -135,7 +135,7 @@ class _MyAppState extends State<Quizz> {
                   answerQuestion: _answerQuestion,
                   questionIndex: _questionIndex,
                   questions: _questions,
-                ) //Quiz
+                )
               : Result(_totalScore, _resetQuiz),
         ),
       ),

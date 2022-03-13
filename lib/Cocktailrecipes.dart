@@ -58,7 +58,13 @@ class Cocktailrecipes extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bulb.jpg'),
+            Image(
+              image: AssetImage('assets/images/bulb.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment(-1, 0.35),
               child: ListView(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'HomePage.dart';
 import 'package:provider/provider.dart';
-import 'Favorites/movie_provider.dart';
+import 'Favorites/cocktail_provider.dart';
 import 'Favorites/home_screen.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -12,9 +12,9 @@ void main() async {
 
   await Hive.initFlutter();
   await Hive.openBox('shopping_box');
-  runApp(ChangeNotifierProvider<MovieProvider>(
+  runApp(ChangeNotifierProvider<CocktailProvider>(
     child: const MyApp(),
-    create: (_) => MovieProvider(), // Create a new ChangeNotifier object
+    create: (_) => CocktailProvider(), // Create a new ChangeNotifier object
   ));
 }
 
@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Cocktailer',
       theme: ThemeData(
+          fontFamily: 'RockSalt',
           primarySwatch: Colors.deepOrange,
           appBarTheme: const AppBarTheme(
             backgroundColor: Colors.white,

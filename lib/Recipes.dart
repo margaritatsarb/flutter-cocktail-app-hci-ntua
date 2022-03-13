@@ -12,17 +12,14 @@ class Flutter extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Flutter',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -62,12 +59,19 @@ class Flutter extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/flutter.jpg'),
+            Image(
+              image: AssetImage('assets/images/flutter.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
+            //Image.asset('assets/images/flutter.jpg'),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
                 '\n \u2022 50 ml Reposado tequila\n \u2022 25 ml Λικέρ καφέ\n \u2022 35 ml Χυμός από ανανά\n \u2022 4 drop Daquiri bitters (Προαιρετικά)',
-                style: TextStyle(fontSize: 25),
+                style: TextStyle(fontSize: 25, color: Colors.white),
               ),
             ),
           ],
@@ -84,10 +88,7 @@ class Mojito extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Mojito',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
@@ -134,7 +135,13 @@ class Mojito extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/mojito.png'),
+            Image(
+              image: AssetImage('assets/images/mojito.png'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               //alignment: Alignment(0, -0.2),
               alignment: Alignment.topLeft,
@@ -156,17 +163,14 @@ class VodkaMartini extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             'Vodka Martini',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -206,12 +210,18 @@ class VodkaMartini extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/vodkamartini.jpg'),
+            Image(
+              image: AssetImage('assets/images/vodkamartini.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
                 '\n \u2022 2 1/2 ounces vodka\n \u2022 1/2 ounce dry vermouth\n \u2022 1 dash orange bitters',
-                style: TextStyle(fontSize: 25),
+                style: TextStyle(fontSize: 25, color: Colors.white),
               ),
             ),
           ],
@@ -228,10 +238,7 @@ class PinaColantua extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Pina Colantua',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
@@ -269,12 +276,18 @@ class PinaColantua extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/pinacolantua.png'),
+            Image(
+              image: AssetImage('assets/images/pinacolantua.png'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
                 '\n \u2022 6 ounces white rum \n \u2022 6 ounces cream of coconut\n  \u2022 6 ounces pineapple juice\n \u2022 1/2 cup frozen pineapple chunks \n \u2022 4 cups ice\n \u2022 4 ounces golden or añejo rum\n \u2022 Pineapple leaves or wedges',
-                style: TextStyle(fontSize: 25),
+                style: TextStyle(fontSize: 25, color: Colors.white),
               ),
             ),
           ],
@@ -291,17 +304,14 @@ class Cosmopolitan extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Cosmopolitan',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -341,7 +351,13 @@ class Cosmopolitan extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/cosmopolitan.jpg'),
+            Image(
+              image: AssetImage('assets/images/cosmopolitan.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -362,17 +378,14 @@ class Margarita extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Margarita',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -412,12 +425,18 @@ class Margarita extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/margarita.jpg'),
+            Image(
+              image: AssetImage('assets/images/margarita.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
                 '\n \u2022 45ml Blanco tequila\n \u2022 25ml Triple sec liqueur\n \u2022 25ml Lime juice\n \u2022 5ml Agave syrup',
-                style: TextStyle(fontSize: 25),
+                style: TextStyle(fontSize: 25, color: Colors.white),
               ),
             ),
           ],
@@ -434,17 +453,14 @@ class MaiTai extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Mai Tai',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -484,7 +500,13 @@ class MaiTai extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/maitai.png'),
+            Image(
+              image: AssetImage('assets/images/maitai.png'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -506,17 +528,14 @@ class Negroni extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Negroni',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -556,12 +575,18 @@ class Negroni extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/negroni.jpg'),
+            Image(
+              image: AssetImage('assets/images/negroni.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
                 '\n \u2022 30ml Tequila\n \u2022 30ml Italian red bitter liqueur\n \u2022 30ml Sweet Vermouth',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                style: TextStyle(fontSize: 25, color: Colors.black),
               ),
             ),
           ],
@@ -577,18 +602,15 @@ class QueensHotelsChow extends StatelessWidget {
         appBar: AppBar(
           // Override the global settings
           title: Text(
-            'Bloody Mary',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            'Queens Hotels Chow',
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -628,7 +650,13 @@ class QueensHotelsChow extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/QueensHotelsChow.jpg'),
+            Image(
+              image: AssetImage('assets/images/QueensHotelsChow.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -649,18 +677,15 @@ class Smokeandgingersours extends StatelessWidget {
         appBar: AppBar(
           // Override the global settings
           title: Text(
-            'Bloody Mary',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            'Smoke and ginger sours',
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -700,7 +725,13 @@ class Smokeandgingersours extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/Smokeandgingersours.jpg'),
+            Image(
+              image: AssetImage('assets/images/Smokeandgingersours.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -722,17 +753,14 @@ class BloodyMary extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Bloody Mary',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -772,7 +800,13 @@ class BloodyMary extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bloodymary.png'),
+            Image(
+              image: AssetImage('assets/images/bloodymary.png'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -794,17 +828,14 @@ class Hazelnutespressomartini extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Hazelnut espresso martini',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -844,7 +875,13 @@ class Hazelnutespressomartini extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/Hazelnutespressomartini.jpg'),
+            Image(
+              image: AssetImage('assets/images/Hazelnutespressomartini.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -866,17 +903,14 @@ class Hurricane extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Hurricane',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -916,7 +950,13 @@ class Hurricane extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/Hurricane.jpg'),
+            Image(
+              image: AssetImage('assets/images/Hurricane.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -938,17 +978,14 @@ class Instantrumeggnog extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Instant rum eggnog',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -988,7 +1025,13 @@ class Instantrumeggnog extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/Instantrumeggnog.jpg'),
+            Image(
+              image: AssetImage('assets/images/Instantrumeggnog.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -1010,17 +1053,14 @@ class Saltedcaramelespressomartini extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Salted caramel espresso martini',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -1060,7 +1100,14 @@ class Saltedcaramelespressomartini extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/Saltedcaramelespressomartini.jpg'),
+            Image(
+              image:
+                  AssetImage('assets/images/Saltedcaramelespressomartini.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -1082,17 +1129,14 @@ class AprilRainCocktail extends StatelessWidget {
           // Override the global settings
           title: Text(
             'April Rain Cocktail',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -1132,12 +1176,18 @@ class AprilRainCocktail extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/AprilRainCocktail.jpg'),
+            Image(
+              image: AssetImage('assets/images/AprilRainCocktail.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
                 '\n \u2022 2 ounces vodka\n \u2022 1/2 ounce dry vermouth\n \u2022 1/2 ounce freshly squeezed lime juice\n \u2022 Lime peel, for garnish ',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                style: TextStyle(fontSize: 25, color: Colors.black),
               ),
             ),
           ],
@@ -1154,17 +1204,14 @@ class Paloma extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Paloma',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -1204,7 +1251,13 @@ class Paloma extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/Paloma.jpg'),
+            Image(
+              image: AssetImage('assets/images/Paloma.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -1226,17 +1279,14 @@ class Ladygreyrumfizz extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Lady grey rum fizz',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -1276,12 +1326,18 @@ class Ladygreyrumfizz extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/Ladygreyrumfizz.png'),
+            Image(
+              image: AssetImage('assets/images/Ladygreyrumfizz.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
                 '\n \u2022 2/3 cup (165ml) rum\n \u2022 2/3 cup (165ml) lemon juice\n \u2022 4 eggwhites (optional)\n \u2022 Ice cubes\n \u2022 3 cups (750ml) chilled prosecco\n \u2022 Edible flowers (optional), to serve\n LADY GREY SYRUP\n \u2022 1/2 cup (110g) caster sugar\n \u2022 1 Lady Grey tea bag\n \u2022 4 juniper berries, bruised\n \u2022 2 strips pared lemon rind, thinly sliced',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                style: TextStyle(fontSize: 25, color: Colors.black),
               ),
             ),
           ],
@@ -1298,17 +1354,14 @@ class LemonDropMartini extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Lemon Drop Martini',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -1348,7 +1401,13 @@ class LemonDropMartini extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/LemonDropMartini.jpg'),
+            Image(
+              image: AssetImage('assets/images/LemonDropMartini.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -1370,17 +1429,14 @@ class JalapenoMargarita extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Jalapeno Margarita',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -1420,12 +1476,18 @@ class JalapenoMargarita extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/JalapenoMargarita.jpg'),
+            Image(
+              image: AssetImage('assets/images/JalapenoMargarita.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
                 '\n \u2022 1 jalapeño pepper, seeds removed and sliced\n \u2022 1 1/2 ounces reposado tequila\n \u2022 1/2 ounce brandy-based orange liqueur\n \u2022 1 ounce freshly squeezed lime juice\n \u2022 1/2 teaspoon agave nectar\n \u2022 1 dash orange bitters\n \u2022 Jalapeño slice, for garnish',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                style: TextStyle(fontSize: 25, color: Colors.black),
               ),
             ),
           ],
@@ -1442,17 +1504,14 @@ class CucumberWasabiMartini extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Cucumber Wasabi Martini',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -1492,7 +1551,13 @@ class CucumberWasabiMartini extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/CucumberWasabiMartini.jpg'),
+            Image(
+              image: AssetImage('assets/images/CucumberWasabiMartini.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -1514,17 +1579,14 @@ class MangoSpiceCocktail extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Mango Spice Cocktail',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -1564,12 +1626,18 @@ class MangoSpiceCocktail extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/MangoSpiceCocktail.jpg'),
+            Image(
+              image: AssetImage('assets/images/MangoSpiceCocktail.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
                 '\n \u2022 1 ounce mango nectar\n \u2022 3 slices jalapeño pepper, divided\n \u2022 1/2 ounce agave nectar\n \u2022 1 1/2 ounces mango vodka\n \u2022 3/4 ounce freshly squeezed lime juice\n \u2022 1 dash orange bitters',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                style: TextStyle(fontSize: 25, color: Colors.black),
               ),
             ),
           ],
@@ -1586,17 +1654,14 @@ class SweetHeatCocktail extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Sweet Heat Cocktail',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -1636,12 +1701,18 @@ class SweetHeatCocktail extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/SweetHeatCocktail.jpg'),
+            Image(
+              image: AssetImage('assets/images/SweetHeatCocktail.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
                 '\n \u2022 1 slice habanero pepper, no seeds\n \u2022 1 1/2 ounces ginger vodka\n \u2022 3/4 ounce agave nectar\n \u2022 3/4 ounce freshly squeezed lime juice\n \u2022 Candied ginger, for garnish',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                style: TextStyle(fontSize: 25, color: Colors.black),
               ),
             ),
           ],
@@ -1658,17 +1729,14 @@ class TequilaCocoaCaliente extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Tequila Cocoa Caliente',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -1708,12 +1776,18 @@ class TequilaCocoaCaliente extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/TequilaCocoaCaliente.jpg'),
+            Image(
+              image: AssetImage('assets/images/TequilaCocoaCaliente.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
                 '\n For the Cinnamon-Serrano-Infused Tequila:\n \u2022 1 (750-milliliter) bottle aged tequila\n \u2022 2 cinnamon sticks\n \u2022 1 whole serrano pepper\n For the Cocktail:\n \u20221 cup milk\n \u2022 2/3 tablet Mexican table chocolate, about 1 ounce\n \u2022 1 1/2 ounces cinnamon-serrano reposado tequila\n \u2022 Cinnamon stick, for garnish\n \u2022 Chili pepper, for garnish',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                style: TextStyle(fontSize: 25, color: Colors.green),
               ),
             ),
           ],
@@ -1730,17 +1804,14 @@ class Firecracker extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Firecracker',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -1780,7 +1851,13 @@ class Firecracker extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/Firecracker.jpg'),
+            Image(
+              image: AssetImage('assets/images/Firecracker.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
@@ -1802,17 +1879,14 @@ class SpicedHurricane extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Spiced Hurricane',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -1852,12 +1926,18 @@ class SpicedHurricane extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/SpicedHurricane.jpg'),
+            Image(
+              image: AssetImage('assets/images/SpicedHurricane.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(
                 '\n \u2022.75 oz spiced rum.\n \u2022.75 oz white rum.\n \u2022 1 oz orange juice.\n \u2022 1 oz lime juice.\n \u2022.25 oz grenadine.\n \u2022 ice.\n \u2022 orange slice and cherry for garnish',
-                style: TextStyle(fontSize: 25, color: Colors.white),
+                style: TextStyle(fontSize: 25, color: Colors.black),
               ),
             ),
           ],
@@ -1874,17 +1954,14 @@ class SpicyPaloma extends StatelessWidget {
           // Override the global settings
           title: Text(
             'Spicy Paloma',
-            style: Theme.of(context)
-                .appBarTheme
-                .titleTextStyle
-                ?.copyWith(color: Colors.deepOrange),
+            style: TextStyle(fontSize: 25),
           ),
           centerTitle: true,
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
           onPressed: () {
-            Navigator.pop(context,
+            Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
           backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -1924,7 +2001,13 @@ class SpicyPaloma extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/SpicyPaloma.jpg'),
+            Image(
+              image: AssetImage('assets/images/SpicyPaloma.jpg'),
+              alignment: Alignment.center,
+              height: double.infinity,
+              width: double.infinity,
+              fit: BoxFit.fill,
+            ),
             Align(
               alignment: Alignment.topLeft,
               child: const Text(

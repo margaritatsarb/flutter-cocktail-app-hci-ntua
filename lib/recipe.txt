@@ -39,3 +39,14 @@ Tequila         3
 333 Paloma Cocktail 
 
 
+Container(
+  width: 100.0,
+  child: FittedBox(
+    fit: BoxFit.scaleDown,
+    // Optionally apply `alignment` to position the text inside the box:
+    //alignment: Alignment.topRight,
+    child: SizedBox(
+      child: Text('\$1,299.99'),
+  )
+)
+

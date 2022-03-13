@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../HomePage.dart';
-import 'movie_provider.dart';
+import 'cocktail_provider.dart';
 
 class MyListScreen extends StatefulWidget {
   const MyListScreen({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class MyListScreen extends StatefulWidget {
 class _MyListScreenState extends State<MyListScreen> {
   @override
   Widget build(BuildContext context) {
-    final _myList = context.watch<MovieProvider>().myList;
+    final _myList = context.watch<CocktailProvider>().myList;
     return Scaffold(
       appBar: AppBar(
         title: Text("Favorites (${_myList.length})"),
@@ -44,7 +44,9 @@ class _MyListScreenState extends State<MyListScreen> {
                     style: TextStyle(color: Colors.red),
                   ),
                   onPressed: () {
-                    context.read<MovieProvider>().removeFromList(currentMovie);
+                    context
+                        .read<CocktailProvider>()
+                        .removeFromList(currentMovie);
                   },
                 ),
               ),
