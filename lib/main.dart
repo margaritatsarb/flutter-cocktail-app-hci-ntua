@@ -20,16 +20,16 @@ Future<void> main() async {
 
   await Hive.initFlutter();
   await Hive.openBox('shopping_box');
-  /*await Firebase.initializeApp(
+  await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-  );*/
+  );
   runApp(ChangeNotifierProvider<CocktailProvider>(
     child: const MyApp(),
     create: (_) => CocktailProvider(),
   ));
 }
 
-/*class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
@@ -76,9 +76,9 @@ Future<void> main() async {
       ),
     );
   }
-}*/
+}
 
-class MyApp extends StatelessWidget {
+/*class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
@@ -106,4 +106,4 @@ class MyApp extends StatelessWidget {
       home: HomePage(),
     );
   }
-}
+}*/
