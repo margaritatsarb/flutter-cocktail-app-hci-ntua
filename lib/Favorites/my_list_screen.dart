@@ -18,6 +18,7 @@ class _MyListScreenState extends State<MyListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Favorites (${_myList.length})"),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.home),

@@ -127,11 +127,11 @@ class Result extends StatelessWidget {
             style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
-          FlatButton(
+          TextButton(
             child: Text(
               'Restart Quiz!',
             ),
-            textColor: Color.fromARGB(255, 230, 57, 18),
+            //textColor: Color.fromARGB(255, 230, 57, 18),
             onPressed: resetHandler,
           ),
           ElevatedButton(

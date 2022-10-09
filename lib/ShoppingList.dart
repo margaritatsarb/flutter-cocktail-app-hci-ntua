@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'HomePage.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:avatar_glow/avatar_glow.dart';
+import 'package:highlight_text/highlight_text.dart';
+import 'package:speech_to_text/speech_to_text.dart' as stt;
 
 class ShoppingList extends StatefulWidget {
   const ShoppingList({Key? key}) : super(key: key);
@@ -14,10 +18,18 @@ class _HomePageState extends State<ShoppingList> {
 
   final _shoppingBox = Hive.box('shopping_box');
 
+  late stt.SpeechToText _speech;
+  bool _isListening = false;
+  String _text = '';
+  String _name = '';
+  String _quantity = '';
+  double _confidence = 1.0;
+
   @override
   void initState() {
     super.initState();
     _refreshItems();
+    _speech = stt.SpeechToText();
   }
 
   void _refreshItems() {
@@ -125,50 +137,103 @@ class _HomePageState extends State<ShoppingList> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
-        actionsIconTheme:
-            IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
-        title: const Text('Shopping List'),
-      ),
-      body: _items.isEmpty
-          ? Center(
-              child: Text(
-                'No Data',
-                style: TextStyle(fontSize: 30),
+    return GestureDetector(
+      onVerticalDragUpdate: (details) {},
+      onHorizontalDragUpdate: (details) {
+        if (details.delta.direction > 0) {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => HomePage()));
+        }
+      },
+      child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Color.fromARGB(255, 255, 255, 255),
+            actionsIconTheme:
+                IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
+            iconTheme: IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
+            title: const Text('Shopping List'),
+          ),
+          body: _items.isEmpty
+              ? Center(
+                  child: Text(
+                    'No Data',
+                    style: TextStyle(fontSize: 30),
+                  ),
+                )
+              : ListView.builder(
+                  itemCount: _items.length,
+                  itemBuilder: (_, index) {
+                    final currentItem = _items[index];
+                    return Card(
+                      color: Colors.orange.shade100,
+                      margin: const EdgeInsets.all(10),
+                      elevation: 3,
+                      child: ListTile(
+                          title: Text(currentItem['name']),
+                          subtitle: Text(currentItem['quantity'].toString()),
+                          trailing: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              IconButton(
+                                  icon: const Icon(Icons.edit),
+                                  onPressed: () =>
+                                      _showForm(context, currentItem['key'])),
+                              IconButton(
+                                icon: const Icon(Icons.delete),
+                                onPressed: () =>
+                                    _deleteItem(currentItem['key']),
+                              ),
+                            ],
+                          )),
+                    );
+                  }),
+          bottomNavigationBar: BottomAppBar(
+            child: Row(children: [
+              AvatarGlow(
+                animate: _isListening,
+                glowColor: Theme.of(context).primaryColor,
+                endRadius: 75.0,
+                duration: const Duration(milliseconds: 2000),
+                repeatPauseDuration: const Duration(milliseconds: 100),
+                repeat: true,
+                child: FloatingActionButton(
+                  onPressed: _listen,
+                  child: Icon(_isListening ? Icons.mic : Icons.mic_none),
+                ),
               ),
-            )
-          : ListView.builder(
-              itemCount: _items.length,
-              itemBuilder: (_, index) {
-                final currentItem = _items[index];
-                return Card(
-                  color: Colors.orange.shade100,
-                  margin: const EdgeInsets.all(10),
-                  elevation: 3,
-                  child: ListTile(
-                      title: Text(currentItem['name']),
-                      subtitle: Text(currentItem['quantity'].toString()),
-                      trailing: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          IconButton(
-                              icon: const Icon(Icons.edit),
-                              onPressed: () =>
-                                  _showForm(context, currentItem['key'])),
-                          IconButton(
-                            icon: const Icon(Icons.delete),
-                            onPressed: () => _deleteItem(currentItem['key']),
-                          ),
-                        ],
-                      )),
-                );
-              }),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => _showForm(context, null),
-        child: const Icon(Icons.add),
-      ),
+              FloatingActionButton(
+                child: const Icon(Icons.add, color: Colors.white),
+                onPressed: () => _showForm(context, null),
+              ),
+            ]),
+          )),
     );
+  }
+
+  void _listen() async {
+    if (!_isListening) {
+      bool available = await _speech.initialize(
+        onStatus: (val) => print('onStatus: $val'),
+        onError: (val) => print('onError: $val'),
+      );
+      if (available) {
+        setState(() => _isListening = true);
+        _speech.listen(
+          onResult: (val) => setState(() {
+            _text = val.recognizedWords;
+            if (val.hasConfidenceRating && val.confidence > 0) {
+              _confidence = val.confidence;
+            }
+          }),
+        );
+      }
+    } else {
+      setState(() => _isListening = false);
+      _speech.stop();
+      List<String> wordList = _text.split(" ");
+      if (_text.isNotEmpty) _name = wordList[0];
+      if (_text.contains(" ")) _quantity = wordList[1];
+      _createItem({"name": _name, "quantity": _quantity});
+    }
   }
 }

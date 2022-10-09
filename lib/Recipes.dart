@@ -613,7 +613,7 @@ class QueensHotelsChow extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Queens Hotels Chow',
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 15),
           ),
           centerTitle: true,
         ),
@@ -688,7 +688,7 @@ class Smokeandgingersours extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Smoke and ginger sours',
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 15),
           ),
           centerTitle: true,
         ),
@@ -838,7 +838,7 @@ class Hazelnutespressomartini extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Hazelnut espresso martini',
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 15),
           ),
           centerTitle: true,
         ),
@@ -1063,7 +1063,7 @@ class Saltedcaramelespressomartini extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Salted caramel espresso martini',
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 10),
           ),
           centerTitle: true,
         ),
@@ -1139,7 +1139,7 @@ class AprilRainCocktail extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'April Rain Cocktail',
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 15),
           ),
           centerTitle: true,
         ),
@@ -1289,7 +1289,7 @@ class Ladygreyrumfizz extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Lady grey rum fizz',
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 15),
           ),
           centerTitle: true,
         ),
@@ -1364,7 +1364,7 @@ class LemonDropMartini extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Lemon Drop Martini',
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 15),
           ),
           centerTitle: true,
         ),
@@ -1439,7 +1439,7 @@ class JalapenoMargarita extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Jalapeno Margarita',
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 15),
           ),
           centerTitle: true,
         ),
@@ -1514,7 +1514,7 @@ class CucumberWasabiMartini extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Cucumber Wasabi Martini',
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 15),
           ),
           centerTitle: true,
         ),
@@ -1589,7 +1589,7 @@ class MangoSpiceCocktail extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Mango Spice Cocktail',
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 15),
           ),
           centerTitle: true,
         ),
@@ -1664,7 +1664,7 @@ class SweetHeatCocktail extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Sweet Heat Cocktail',
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 15),
           ),
           centerTitle: true,
         ),
@@ -1739,7 +1739,7 @@ class TequilaCocoaCaliente extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Tequila Cocoa Caliente',
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 15),
           ),
           centerTitle: true,
         ),
@@ -1814,7 +1814,7 @@ class Firecracker extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Firecracker',
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 15),
           ),
           centerTitle: true,
         ),

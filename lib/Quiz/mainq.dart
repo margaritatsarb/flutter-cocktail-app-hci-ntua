@@ -70,7 +70,7 @@ class _MyAppState extends State<Quizz> {
           fontFamily: 'RockSalt',
           appBarTheme: const AppBarTheme(
             titleTextStyle: TextStyle(
-              fontSize: 40.0,
+              fontSize: 30.0,
               fontStyle: FontStyle.italic,
               fontFamily: 'RockSalt',
               color: Color.fromARGB(255, 230, 57, 18),
@@ -81,7 +81,7 @@ class _MyAppState extends State<Quizz> {
         appBar: AppBar(
           title: Text('Cocktailer'),
           titleTextStyle: TextStyle(
-            fontSize: 40.0,
+            fontSize: 30.0,
             fontFamily: 'RockSalt',
             color: Color.fromARGB(255, 230, 57, 18),
           ),
