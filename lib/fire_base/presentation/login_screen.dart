@@ -4,6 +4,7 @@ import 'signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '/../HomePage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -19,7 +20,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     _emailController.dispose();
     _passwordController.dispose();
@@ -28,6 +28,19 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        title: const Text('Cocktailer'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.home),
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const HomePage()));
+        },
+        backgroundColor: Color.fromARGB(255, 230, 57, 18),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state is Authenticated) {
@@ -54,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Login Screen',
+                        'Login',
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -91,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 obscureText: true,
                                 keyboardType: TextInputType.text,
                                 decoration: InputDecoration(
-                                    hintText: '*******',
+                                    hintText: 'Password',
                                     border: OutlineInputBorder()),
                                 autovalidateMode:
                                     AutovalidateMode.onUserInteraction,
@@ -151,6 +164,46 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ],
                   ),
+                ),
+              ),
+            );
+          }
+          if (state is Authenticated) {
+            final user = FirebaseAuth.instance.currentUser;
+            return Center(
+              child: Padding(
+                padding: EdgeInsets.only(top: 60, left: 20),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Logged In',
+                      style: TextStyle(
+                        fontSize: 38,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Text(
+                      'Email: ${user?.email}',
+                      style: TextStyle(color: Colors.blue),
+                    ),
+                    const SizedBox(
+                      height: 50,
+                    ),
+                    SizedBox(
+                      height: 30,
+                      width: 100,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          context.read<AuthBloc>().add(SignoutRequest());
+                        },
+                        child: const Text('Logout'),
+                      ),
+                    )
+                  ],
                 ),
               ),
             );

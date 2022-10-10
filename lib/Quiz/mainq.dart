@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../HomePage.dart';
 import './quiz.dart';
 import './result.dart';
-import '../Favorites/home_screen.dart';
+import '../Favorites/mainf.dart';
 import '../ShoppingList.dart';
 
 class Quizz extends StatefulWidget {
@@ -129,6 +129,7 @@ class _MyAppState extends State<Quizz> {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Padding(
           padding: const EdgeInsets.all(30.0),

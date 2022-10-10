@@ -153,6 +153,16 @@ class _HomePageState extends State<ShoppingList> {
             iconTheme: IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
             title: const Text('Shopping List'),
           ),
+          floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.home),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const HomePage()));
+            },
+            backgroundColor: Color.fromARGB(255, 230, 57, 18),
+          ),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
           body: _items.isEmpty
               ? Center(
                   child: Text(
@@ -188,7 +198,7 @@ class _HomePageState extends State<ShoppingList> {
                     );
                   }),
           bottomNavigationBar: BottomAppBar(
-            child: Row(children: [
+            child: Row(children: <Widget>[
               AvatarGlow(
                 animate: _isListening,
                 glowColor: Theme.of(context).primaryColor,
@@ -201,11 +211,18 @@ class _HomePageState extends State<ShoppingList> {
                   child: Icon(_isListening ? Icons.mic : Icons.mic_none),
                 ),
               ),
+              Spacer(),
+              Container(
+                height: 55.0,
+                width: 1.0,
+              ),
               FloatingActionButton(
                 child: const Icon(Icons.add, color: Colors.white),
                 onPressed: () => _showForm(context, null),
               ),
+              IconButton(onPressed: null, icon: Icon(null))
             ]),
+            shape: CircularNotchedRectangle(),
           )),
     );
   }

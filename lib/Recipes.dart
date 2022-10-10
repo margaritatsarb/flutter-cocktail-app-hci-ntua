@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Favorites/home_screen.dart';
+import 'Favorites/mainf.dart';
 import 'ShoppingList.dart';
 import 'Homepage.dart';
 
@@ -55,10 +55,11 @@ class Flutter extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
-          children: <Widget>[
+          children: const <Widget>[
             Image(
               image: AssetImage('assets/images/flutter.jpg'),
               alignment: Alignment.center,
@@ -66,10 +67,9 @@ class Flutter extends StatelessWidget {
               width: double.infinity,
               fit: BoxFit.fill,
             ),
-            //Image.asset('assets/images/flutter.jpg'),
             Align(
               alignment: Alignment.topLeft,
-              child: const Text(
+              child: Text(
                 ' \u2022 50 ml Reposado tequila\n \u2022 25 ml Coffe Liquer\n \u2022 35 ml Pineapple juice\n \u2022 4 drop Daquiri bitters (optional)',
                 style: TextStyle(fontSize: 20, color: Colors.white),
               ),
@@ -122,6 +122,7 @@ class Mojito extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.home),
@@ -207,6 +208,7 @@ class VodkaMartini extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -282,6 +284,7 @@ class PinaColantua extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -357,6 +360,7 @@ class Cosmopolitan extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -431,6 +435,7 @@ class Margarita extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -506,6 +511,7 @@ class MaiTai extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -581,6 +587,7 @@ class Negroni extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -656,6 +663,7 @@ class QueensHotelsChow extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -731,6 +739,7 @@ class Smokeandgingersours extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -806,6 +815,7 @@ class BloodyMary extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -881,6 +891,7 @@ class Hazelnutespressomartini extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -956,6 +967,7 @@ class Hurricane extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -1031,6 +1043,7 @@ class Instantrumeggnog extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -1106,6 +1119,7 @@ class Saltedcaramelespressomartini extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -1182,6 +1196,7 @@ class AprilRainCocktail extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -1257,6 +1272,7 @@ class Paloma extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -1332,6 +1348,7 @@ class Ladygreyrumfizz extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -1407,6 +1424,7 @@ class LemonDropMartini extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -1482,6 +1500,7 @@ class JalapenoMargarita extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -1557,6 +1576,7 @@ class CucumberWasabiMartini extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -1632,6 +1652,7 @@ class MangoSpiceCocktail extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -1707,6 +1728,7 @@ class SweetHeatCocktail extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -1782,6 +1804,7 @@ class TequilaCocoaCaliente extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -1857,6 +1880,7 @@ class Firecracker extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -1932,6 +1956,7 @@ class SpicedHurricane extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(
@@ -2007,6 +2032,7 @@ class SpicyPaloma extends StatelessWidget {
                   })
             ],
           ),
+          shape: CircularNotchedRectangle(),
         ),
         body: Center(
             child: Stack(

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'Cocktailrecipes.dart';
-import 'Favorites/home_screen.dart';
+import 'Favorites/mainf.dart';
 import 'ShoppingList.dart';
 import 'Quiz/mainq.dart';
+import 'fire_base/presentation/login_screen.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -24,7 +25,6 @@ class HomePage extends StatelessWidget {
                       value: 0,
                       child: Text(
                         "Quiz",
-                        style: TextStyle(fontFamily: 'RockSalt'),
                       ),
                     ),
                     PopupMenuItem<int>(
@@ -38,6 +38,10 @@ class HomePage extends StatelessWidget {
                     PopupMenuItem<int>(
                       value: 3,
                       child: Text("Favorites"),
+                    ),
+                    PopupMenuItem<int>(
+                      value: 4,
+                      child: Text("Login/Logout"),
                     ),
                   ];
                 },
@@ -60,6 +64,11 @@ class HomePage extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) => const Favorites()));
+                  } else if (value == 4) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginScreen()));
                   }
                 }),
           ],
@@ -91,7 +100,20 @@ class HomePage extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) => const ShoppingList()));
-                  })
+                  }),
+              Spacer(),
+              IconButton(
+                  icon: const Icon(
+                    Icons.login_outlined,
+                    color: Color.fromARGB(133, 148, 55, 12),
+                    size: 30,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginScreen()));
+                  }),
             ],
           ),
         ),

@@ -2,14 +2,10 @@ import 'package:flutter/material.dart';
 import 'HomePage.dart';
 import 'package:provider/provider.dart';
 import 'Favorites/cocktail_provider.dart';
-import 'Favorites/home_screen.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'fire_base/bloc/auth_bloc.dart';
 import 'fire_base/data/repositories/auth_repository.dart';
-import 'fire_base/presentation/home_screen.dart';
 import 'fire_base/presentation/login_screen.dart';
-import 'fire_base/presentation/signup_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -66,11 +62,12 @@ class MyApp extends StatelessWidget {
           home: StreamBuilder<User?>(
               stream: FirebaseAuth.instance.authStateChanges(),
               builder: (context, snapshot) {
-                if (snapshot.hasData) {
+                /*if (snapshot.hasData) {
                   return HomePage();
                 }
 
-                return LoginScreen();
+                return LoginScreen();*/
+                return HomePage();
               }),
         ),
       ),

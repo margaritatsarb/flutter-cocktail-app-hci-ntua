@@ -19,7 +19,6 @@ class _SignupScreenState extends State<SignupScreen> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     _emailController.dispose();
     _passwordController.dispose();
@@ -29,8 +28,18 @@ class _SignupScreenState extends State<SignupScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SignUp'),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        title: const Text('Cocktailer'),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.home),
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const HomePage()));
+        },
+        backgroundColor: Color.fromARGB(255, 230, 57, 18),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state is Authenticated) {
@@ -59,12 +68,12 @@ class _SignupScreenState extends State<SignupScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
+                      Text(
                         'Sign Up',
                         style: TextStyle(
-                          fontSize: 38,
-                          fontWeight: FontWeight.bold,
-                        ),
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 38),
                       ),
                       SizedBox(
                         height: 20,
@@ -94,6 +103,7 @@ class _SignupScreenState extends State<SignupScreen> {
                               ),
                               TextFormField(
                                 controller: _passwordController,
+                                obscureText: true,
                                 decoration: const InputDecoration(
                                   hintText: 'Password',
                                   border: OutlineInputBorder(),
@@ -122,46 +132,28 @@ class _SignupScreenState extends State<SignupScreen> {
                           ),
                         ),
                       ),
-                      const Text("Already have an account?"),
-                      OutlinedButton(
-                        onPressed: () {
+                      Text(
+                        "Already have an account? ",
+                        style: TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w300,
+                            fontSize: 14),
+                      ),
+                      GestureDetector(
+                        onTap: () {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const LoginScreen()),
                           );
                         },
-                        child: const Text("Sign In"),
-                      ),
-                      const Text("Or"),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconButton(
-                            onPressed: () {},
-                            icon: Image.network(
-                              "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png",
-                              height: 30,
-                              width: 30,
-                            ),
-                          ),
-                          Container(
-                            color: Colors.black45,
-                            height: 50,
-                            width: 2,
-                          ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: Image.network(
-                              "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png",
-                              height: 30,
-                              width: 30,
-                            ),
-                          ),
-                        ],
+                        child: Text(
+                          "Login",
+                          style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
+                        ),
                       ),
                     ],
                   ),

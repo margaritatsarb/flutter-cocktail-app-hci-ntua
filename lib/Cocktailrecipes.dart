@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/HomePage.dart';
 import 'Recipes.dart';
-import 'Favorites/home_screen.dart';
+import 'Favorites/mainf.dart';
 import 'ShoppingList.dart';
 
 class Cocktailrecipes extends StatefulWidget {
@@ -27,21 +27,12 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
             appBar: AppBar(
               title: customSearchBar,
               backgroundColor: Color.fromARGB(255, 255, 255, 255),
-              /*
-          title: Text(
-            'Cocktail Recipes',
-            style: Theme.of(context).appBarTheme.titleTextStyle,
-          ),
-          */
               automaticallyImplyLeading: false,
               actions: [
                 IconButton(
                   onPressed: () {
-                    // method to show the search bar
                     showSearch(
-                        context: context,
-                        // delegate to customize the search bar
-                        delegate: CustomSearchDelegate());
+                        context: context, delegate: CustomSearchDelegate());
                   },
                   icon: const Icon(Icons.search),
                 )
@@ -78,6 +69,7 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                       })
                 ],
               ),
+              shape: CircularNotchedRectangle(),
             ),
             floatingActionButton: FloatingActionButton(
               child: Icon(Icons.home),
