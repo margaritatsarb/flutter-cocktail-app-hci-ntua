@@ -123,7 +123,7 @@ class _HomePageState extends State<ShoppingList> {
                       _nameController.text = '';
                       _quantityController.text = '';
 
-                      Navigator.of(context).pop(); // Close the bottom sheet
+                      Navigator.of(context).pop();
                     },
                     child: Text(itemKey == null ? 'Create New' : 'Update'),
                   ),
@@ -156,7 +156,7 @@ class _HomePageState extends State<ShoppingList> {
           floatingActionButton: FloatingActionButton(
             child: Icon(Icons.home),
             onPressed: () {
-              Navigator.push(context,
+              Navigator.pop(context,
                   MaterialPageRoute(builder: (context) => const HomePage()));
             },
             backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -202,7 +202,7 @@ class _HomePageState extends State<ShoppingList> {
               AvatarGlow(
                 animate: _isListening,
                 glowColor: Theme.of(context).primaryColor,
-                endRadius: 75.0,
+                endRadius: 45.0,
                 duration: const Duration(milliseconds: 2000),
                 repeatPauseDuration: const Duration(milliseconds: 100),
                 repeat: true,
@@ -212,10 +212,6 @@ class _HomePageState extends State<ShoppingList> {
                 ),
               ),
               Spacer(),
-              Container(
-                height: 55.0,
-                width: 1.0,
-              ),
               FloatingActionButton(
                 child: const Icon(Icons.add, color: Colors.white),
                 onPressed: () => _showForm(context, null),

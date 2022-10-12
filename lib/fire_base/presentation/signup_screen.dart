@@ -34,7 +34,7 @@ class _SignupScreenState extends State<SignupScreen> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.home),
         onPressed: () {
-          Navigator.push(context,
+          Navigator.pop(context,
               MaterialPageRoute(builder: (context) => const HomePage()));
         },
         backgroundColor: Color.fromARGB(255, 230, 57, 18),

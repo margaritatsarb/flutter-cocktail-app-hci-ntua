@@ -4,6 +4,9 @@ import 'Favorites/mainf.dart';
 import 'ShoppingList.dart';
 import 'Quiz/mainq.dart';
 import 'fire_base/presentation/login_screen.dart';
+import 'Camera/camera.dart';
+import 'package:camera/camera.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -24,51 +27,65 @@ class HomePage extends StatelessWidget {
                     PopupMenuItem<int>(
                       value: 0,
                       child: Text(
-                        "Quiz",
+                        "Cocktail Recipes",
                       ),
                     ),
                     PopupMenuItem<int>(
                       value: 1,
-                      child: Text("Cocktail Recipes"),
-                    ),
-                    PopupMenuItem<int>(
-                      value: 2,
-                      child: Text("Shopping List"),
-                    ),
-                    PopupMenuItem<int>(
-                      value: 3,
                       child: Text("Favorites"),
                     ),
                     PopupMenuItem<int>(
-                      value: 4,
+                      value: 2,
                       child: Text("Login/Logout"),
+                    ),
+                    PopupMenuItem<int>(
+                      value: 3,
+                      child: Text("My Cocktails"),
+                    ),
+                    PopupMenuItem<int>(
+                      value: 4,
+                      child: Text("Quiz"),
+                    ),
+                    PopupMenuItem<int>(
+                      value: 5,
+                      child: Text("Shopping List"),
                     ),
                   ];
                 },
-                onSelected: (value) {
+                onSelected: (value) async {
                   if (value == 0) {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const Quizz()));
-                  } else if (value == 1) {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const Cocktailrecipes()));
-                  } else if (value == 2) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ShoppingList()));
-                  } else if (value == 3) {
+                  } else if (value == 1) {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const Favorites()));
-                  } else if (value == 4) {
+                  } else if (value == 2) {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const LoginScreen()));
+                  } else if (value == 3) {
+                    final cameras = await availableCameras();
+                    late final firstCamera = cameras.first;
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            ProviderScope(child: Camera(camera: firstCamera)),
+                      ),
+                    );
+                  } else if (value == 4) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const Quizz()));
+                  } else if (value == 5) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ShoppingList()));
                   }
                 }),
           ],
@@ -77,17 +94,18 @@ class HomePage extends StatelessWidget {
           child: Row(
             children: [
               IconButton(
-                  icon: const Icon(
-                    Icons.favorite,
-                    color: Color.fromARGB(255, 221, 19, 4),
-                    size: 30,
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const Favorites()));
-                  }),
+                icon: const Icon(
+                  Icons.favorite,
+                  color: Color.fromARGB(255, 221, 19, 4),
+                  size: 30,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Favorites()));
+                },
+              ),
               Spacer(),
               IconButton(
                   icon: const Icon(
@@ -156,6 +174,32 @@ class HomePage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (context) => const Cocktailrecipes()));
+                },
+                style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 230, 57, 18),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 40, vertical: 20),
+                    textStyle: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.bold)),
+              ),
+            ),
+            Align(
+              alignment: Alignment(0, 0.6),
+              child: ElevatedButton(
+                child: const Text(
+                  'My Cocktails',
+                ),
+                onPressed: () async {
+                  final cameras = await availableCameras();
+                  late final firstCamera = cameras.first;
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                          ProviderScope(child: Camera(camera: firstCamera)),
+                    ),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                     primary: Color.fromARGB(255, 230, 57, 18),

@@ -25,6 +25,10 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
         },
         child: Scaffold(
             appBar: AppBar(
+              leading: IconButton(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
               title: customSearchBar,
               backgroundColor: Color.fromARGB(255, 255, 255, 255),
               automaticallyImplyLeading: false,

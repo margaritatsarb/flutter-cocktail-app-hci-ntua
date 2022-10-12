@@ -66,16 +66,23 @@ class _MyAppState extends State<Quizz> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Cocktailer',
       theme: ThemeData(
           fontFamily: 'RockSalt',
+          primarySwatch: Colors.deepOrange,
           appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.white,
+            iconTheme: IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
+            actionsIconTheme:
+                IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
+            centerTitle: true,
+            elevation: 15,
             titleTextStyle: TextStyle(
               fontSize: 30.0,
               fontStyle: FontStyle.italic,
               fontFamily: 'RockSalt',
               color: Color.fromARGB(255, 230, 57, 18),
             ),
-            iconTheme: IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
           )),
       home: Scaffold(
         appBar: AppBar(

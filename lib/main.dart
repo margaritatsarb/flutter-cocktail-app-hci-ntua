@@ -20,7 +20,7 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(ChangeNotifierProvider<CocktailProvider>(
-    child: const MyApp(),
+    child: MyApp(),
     create: (_) => CocktailProvider(),
   ));
 }
@@ -57,8 +57,6 @@ class MyApp extends StatelessWidget {
                   color: Color.fromARGB(255, 230, 57, 18),
                 ),
               )),
-          /**  here user is imported
-           *  from Firebase auth package  **/
           home: StreamBuilder<User?>(
               stream: FirebaseAuth.instance.authStateChanges(),
               builder: (context, snapshot) {
@@ -74,33 +72,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-/*class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Cocktailer',
-      theme: ThemeData(
-          fontFamily: 'RockSalt',
-          primarySwatch: Colors.deepOrange,
-          appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.white,
-            iconTheme: IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
-            actionsIconTheme:
-                IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
-            centerTitle: true,
-            elevation: 15,
-            titleTextStyle: TextStyle(
-              fontSize: 30.0,
-              fontStyle: FontStyle.italic,
-              fontFamily: 'RockSalt',
-              color: Color.fromARGB(255, 230, 57, 18),
-            ),
-          )),
-      home: HomePage(),
-    );
-  }
-}*/

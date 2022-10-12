@@ -31,10 +31,9 @@ class _MyListScreenState extends State<MyListScreen> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: ListView.builder(
           itemCount: _myList.length,
-          itemBuilder: (context, index) {
-            final currentMovie1 = _myList[index];
-            final currentMovie = currentMovie1.toString();
-            /*return Card(
+          itemBuilder: (_, index) {
+            final currentMovie = _myList[index];
+            return Card(
               key: ValueKey(currentMovie.title),
               elevation: 4,
               child: ListTile(
@@ -49,20 +48,10 @@ class _MyListScreenState extends State<MyListScreen> {
                     context
                         .read<CocktailProvider>()
                         .removeFromList(currentMovie);
-                  },),),);*/
-            return Dismissible(
-                key: ValueKey(currentMovie1.title),
-                onDismissed: (direction) {
-                  setState(() {
-                    _myList.removeAt(index);
-                  });
-                  ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('$currentMovie dismissed')));
-                },
-                background: Container(color: Colors.red),
-                child: ListTile(
-                  title: Text(currentMovie1.title),
-                ));
+                  },
+                ),
+              ),
+            );
           }),
     );
   }
