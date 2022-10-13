@@ -62,20 +62,27 @@ class _DisplayImagesListState extends ConsumerState<DisplayImagesList> {
           selectionColor: Color.fromARGB(255, 230, 57, 18),
         ),
       ),
-      body: ListView.builder(
-        itemCount: imagePathList.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Column(
-            children: [
-              SizedBox(
-                height: 100,
-                child: Image.network(imagePathList[index]),
+      body: imagePathList.isEmpty
+          ? Center(
+              child: Text(
+                'Add Photos Of\nYour Cocktais!',
+                style: TextStyle(fontSize: 20),
               ),
-              const Divider(),
-            ],
-          );
-        },
-      ),
+            )
+          : ListView.builder(
+              itemCount: imagePathList.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Column(
+                  children: [
+                    SizedBox(
+                      height: 100,
+                      child: Image.network(imagePathList[index]),
+                    ),
+                    const Divider(),
+                  ],
+                );
+              },
+            ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.home),
         onPressed: () {

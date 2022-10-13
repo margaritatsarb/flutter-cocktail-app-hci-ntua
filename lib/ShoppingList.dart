@@ -156,7 +156,7 @@ class _HomePageState extends State<ShoppingList> {
           floatingActionButton: FloatingActionButton(
             child: Icon(Icons.home),
             onPressed: () {
-              Navigator.pop(context,
+              Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const HomePage()));
             },
             backgroundColor: Color.fromARGB(255, 230, 57, 18),
@@ -166,8 +166,8 @@ class _HomePageState extends State<ShoppingList> {
           body: _items.isEmpty
               ? Center(
                   child: Text(
-                    'No Data',
-                    style: TextStyle(fontSize: 30),
+                    'Add Ingredients To\nYour Shopping List!',
+                    style: TextStyle(fontSize: 20),
                   ),
                 )
               : ListView.builder(

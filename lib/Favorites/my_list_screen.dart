@@ -1,4 +1,3 @@
-// screens/my_list_screen.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../HomePage.dart';
@@ -29,16 +28,24 @@ class _MyListScreenState extends State<MyListScreen> {
         backgroundColor: Color.fromARGB(255, 230, 57, 18),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      body: ListView.builder(
-          itemCount: _myList.length,
-          itemBuilder: (_, index) {
-            final currentMovie = _myList[index];
-            return Card(
-              key: ValueKey(currentMovie.title),
+      body: _myList.isEmpty
+          ? Center(
+              child: Text(
+                'Add Cocktails To\nYour Favorites!',
+                style: TextStyle(fontSize: 20),
+              ),
+            )
+          : ListView.builder(
+              itemCount: _myList.length,
+              itemBuilder: (context, index) {
+                final currentCocktail1 = _myList[index];
+                final currentCocktail = currentCocktail1.toString();
+                /*return Card(
+              key: ValueKey(currentCocktail.title),
               elevation: 4,
               child: ListTile(
-                title: Text(currentMovie.title),
-                subtitle: Text(currentMovie.runtime ?? ''),
+                title: Text(currentCocktail.title),
+                subtitle: Text(currentCocktail.runtime ?? ''),
                 trailing: TextButton(
                   child: const Text(
                     'Remove',
@@ -47,12 +54,27 @@ class _MyListScreenState extends State<MyListScreen> {
                   onPressed: () {
                     context
                         .read<CocktailProvider>()
-                        .removeFromList(currentMovie);
-                  },
-                ),
-              ),
-            );
-          }),
+                        .removeFromList(currentCocktail);
+                  },),),);*/
+                return Dismissible(
+                    key: ValueKey(currentCocktail1.title),
+                    onDismissed: (direction) {
+                      setState(() {
+                        _myList.removeAt(index);
+                      });
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Text('$currentCocktail dismissed')));
+                    },
+                    background: Container(color: Colors.red),
+                    child: ListTile(
+                      title: Text(currentCocktail1.title),
+                      trailing: IconButton(
+                        icon: const Icon(Icons.delete_forever_outlined),
+                        tooltip: "Slide To Delete",
+                        onPressed: () {},
+                      ),
+                    ));
+              }),
     );
   }
 }
