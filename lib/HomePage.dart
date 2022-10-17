@@ -14,39 +14,39 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
           title: Text(
             'Cocktailer',
             style: Theme.of(context).appBarTheme.titleTextStyle,
           ),
           actions: [
             PopupMenuButton(
-                icon: Icon(Icons.list),
+                icon: const Icon(Icons.list),
                 itemBuilder: (context) {
                   return [
-                    PopupMenuItem<int>(
+                    const PopupMenuItem<int>(
                       value: 0,
                       child: Text(
                         "Cocktail Recipes",
                       ),
                     ),
-                    PopupMenuItem<int>(
+                    const PopupMenuItem<int>(
                       value: 1,
                       child: Text("Favorites"),
                     ),
-                    PopupMenuItem<int>(
+                    const PopupMenuItem<int>(
                       value: 2,
                       child: Text("Login/Logout"),
                     ),
-                    PopupMenuItem<int>(
+                    const PopupMenuItem<int>(
                       value: 3,
                       child: Text("My Cocktails"),
                     ),
-                    PopupMenuItem<int>(
+                    const PopupMenuItem<int>(
                       value: 4,
                       child: Text("Quiz"),
                     ),
-                    PopupMenuItem<int>(
+                    const PopupMenuItem<int>(
                       value: 5,
                       child: Text("Shopping List"),
                     ),
@@ -106,7 +106,7 @@ class HomePage extends StatelessWidget {
                           builder: (context) => const Favorites()));
                 },
               ),
-              Spacer(),
+              const Spacer(),
               IconButton(
                   icon: const Icon(
                     Icons.shopping_cart,
@@ -119,7 +119,7 @@ class HomePage extends StatelessWidget {
                         MaterialPageRoute(
                             builder: (context) => const ShoppingList()));
                   }),
-              Spacer(),
+              const Spacer(),
               IconButton(
                   icon: const Icon(
                     Icons.login_outlined,
@@ -138,7 +138,7 @@ class HomePage extends StatelessWidget {
         body: Center(
             child: Stack(
           children: <Widget>[
-            Image(
+            const Image(
               image: AssetImage('assets/images/bulb.jpg'),
               alignment: Alignment.center,
               height: double.infinity,
@@ -146,7 +146,7 @@ class HomePage extends StatelessWidget {
               fit: BoxFit.fill,
             ),
             Align(
-              alignment: Alignment(0, -0.5),
+              alignment: const Alignment(0, -0.5),
               child: ElevatedButton(
                 child: const Text(
                   'Quiz',
@@ -156,7 +156,7 @@ class HomePage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => const Quizz()));
                 },
                 style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 230, 57, 18),
+                    backgroundColor: const Color.fromARGB(255, 230, 57, 18),
                     padding: const EdgeInsets.symmetric(
                         horizontal: 40, vertical: 20),
                     textStyle: const TextStyle(
@@ -164,7 +164,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Align(
-              alignment: Alignment(0, 0.1),
+              alignment: const Alignment(0, 0.1),
               child: ElevatedButton(
                 child: const Text(
                   'Cocktail\n recipes',
@@ -176,7 +176,7 @@ class HomePage extends StatelessWidget {
                           builder: (context) => const Cocktailrecipes()));
                 },
                 style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 230, 57, 18),
+                    backgroundColor: const Color.fromARGB(255, 230, 57, 18),
                     padding: const EdgeInsets.symmetric(
                         horizontal: 40, vertical: 20),
                     textStyle: const TextStyle(
@@ -184,7 +184,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Align(
-              alignment: Alignment(0, 0.6),
+              alignment: const Alignment(0, 0.6),
               child: ElevatedButton(
                 child: const Text(
                   'My Cocktails',
@@ -202,7 +202,7 @@ class HomePage extends StatelessWidget {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                    primary: Color.fromARGB(255, 230, 57, 18),
+                    backgroundColor: const Color.fromARGB(255, 230, 57, 18),
                     padding: const EdgeInsets.symmetric(
                         horizontal: 40, vertical: 20),
                     textStyle: const TextStyle(

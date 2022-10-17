@@ -5,7 +5,6 @@ import 'Favorites/cocktail_provider.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'fire_base/bloc/auth_bloc.dart';
 import 'fire_base/data/repositories/auth_repository.dart';
-import 'fire_base/presentation/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -16,11 +15,18 @@ Future<void> main() async {
 
   await Hive.initFlutter();
   await Hive.openBox('shopping_box');
+  /*if (Firebase.apps.isEmpty) {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  } else {
+    Firebase.app(); // if already initialized, use that one
+  }*/
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(ChangeNotifierProvider<CocktailProvider>(
-    child: MyApp(),
+    child: const MyApp(),
     create: (_) => CocktailProvider(),
   ));
 }
@@ -65,7 +71,7 @@ class MyApp extends StatelessWidget {
                 }
 
                 return LoginScreen();*/
-                return HomePage();
+                return const HomePage();
               }),
         ),
       ),

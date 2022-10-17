@@ -17,19 +17,19 @@ class _MyListScreenState extends State<MyListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Favorites (${_myList.length})"),
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.home),
+        child: const Icon(Icons.home),
         onPressed: () {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => const HomePage()));
         },
-        backgroundColor: Color.fromARGB(255, 230, 57, 18),
+        backgroundColor: const Color.fromARGB(255, 230, 57, 18),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: _myList.isEmpty
-          ? Center(
+          ? const Center(
               child: Text(
                 'Add Cocktails To\nYour Favorites!',
                 style: TextStyle(fontSize: 20),
@@ -40,22 +40,6 @@ class _MyListScreenState extends State<MyListScreen> {
               itemBuilder: (context, index) {
                 final currentCocktail1 = _myList[index];
                 final currentCocktail = currentCocktail1.toString();
-                /*return Card(
-              key: ValueKey(currentCocktail.title),
-              elevation: 4,
-              child: ListTile(
-                title: Text(currentCocktail.title),
-                subtitle: Text(currentCocktail.runtime ?? ''),
-                trailing: TextButton(
-                  child: const Text(
-                    'Remove',
-                    style: TextStyle(color: Colors.red),
-                  ),
-                  onPressed: () {
-                    context
-                        .read<CocktailProvider>()
-                        .removeFromList(currentCocktail);
-                  },),),);*/
                 return Dismissible(
                     key: ValueKey(currentCocktail1.title),
                     onDismissed: (direction) {

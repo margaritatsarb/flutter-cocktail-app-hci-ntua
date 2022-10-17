@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'HomePage.dart';
-import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:avatar_glow/avatar_glow.dart';
-import 'package:highlight_text/highlight_text.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 
 class ShoppingList extends StatefulWidget {
@@ -142,29 +140,30 @@ class _HomePageState extends State<ShoppingList> {
       onHorizontalDragUpdate: (details) {
         if (details.delta.direction > 0) {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => HomePage()));
+              .push(MaterialPageRoute(builder: (context) => const HomePage()));
         }
       },
       child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Color.fromARGB(255, 255, 255, 255),
+            backgroundColor: const Color.fromARGB(255, 255, 255, 255),
             actionsIconTheme:
-                IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
-            iconTheme: IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
+                const IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
+            iconTheme:
+                const IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
             title: const Text('Shopping List'),
           ),
           floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.home),
+            child: const Icon(Icons.home),
             onPressed: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const HomePage()));
             },
-            backgroundColor: Color.fromARGB(255, 230, 57, 18),
+            backgroundColor: const Color.fromARGB(255, 230, 57, 18),
           ),
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
           body: _items.isEmpty
-              ? Center(
+              ? const Center(
                   child: Text(
                     'Add Ingredients To\nYour Shopping List!',
                     style: TextStyle(fontSize: 20),
@@ -211,14 +210,14 @@ class _HomePageState extends State<ShoppingList> {
                   child: Icon(_isListening ? Icons.mic : Icons.mic_none),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               FloatingActionButton(
                 child: const Icon(Icons.add, color: Colors.white),
                 onPressed: () => _showForm(context, null),
               ),
-              IconButton(onPressed: null, icon: Icon(null))
+              const IconButton(onPressed: null, icon: Icon(null))
             ]),
-            shape: CircularNotchedRectangle(),
+            shape: const CircularNotchedRectangle(),
           )),
     );
   }

@@ -28,16 +28,16 @@ class _SignupScreenState extends State<SignupScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         title: const Text('Cocktailer'),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.home),
+        child: const Icon(Icons.home),
         onPressed: () {
           Navigator.pop(context,
               MaterialPageRoute(builder: (context) => const HomePage()));
         },
-        backgroundColor: Color.fromARGB(255, 230, 57, 18),
+        backgroundColor: const Color.fromARGB(255, 230, 57, 18),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: BlocConsumer<AuthBloc, AuthState>(
@@ -61,103 +61,114 @@ class _SignupScreenState extends State<SignupScreen> {
 
           if (state is UnAuthenticated) {
             return Center(
-              child: Padding(
-                padding: EdgeInsets.all(60),
-                child: SingleChildScrollView(
-                  reverse: true,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Sign Up',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 38),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Center(
-                        child: Form(
-                          key: _formKey,
-                          child: Column(
-                            children: [
-                              TextFormField(
-                                controller: _emailController,
-                                decoration: const InputDecoration(
-                                  hintText: 'Email',
-                                  border: OutlineInputBorder(),
-                                ),
-                                autovalidateMode:
-                                    AutovalidateMode.onUserInteraction,
-                                validator: (value) {
-                                  return value != null &&
-                                          !EmailValidator.validate(value)
-                                      ? 'Enter valid email'
-                                      : null;
-                                },
-                              ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextFormField(
-                                controller: _passwordController,
-                                obscureText: true,
-                                decoration: const InputDecoration(
-                                  hintText: 'Password',
-                                  border: OutlineInputBorder(),
-                                ),
-                                autovalidateMode:
-                                    AutovalidateMode.onUserInteraction,
-                                validator: (value) {
-                                  return value != null && value.length < 6
-                                      ? 'Enter in 6 chars password'
-                                      : null;
-                                },
-                              ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.7,
-                                child: ElevatedButton(
-                                  onPressed: () {
-                                    _createAccountWithEmailAndPassword(context);
+              child: Stack(
+                children: <Widget>[
+                  const Image(
+                    image: AssetImage('assets/images/bulb.jpg'),
+                    alignment: Alignment.center,
+                    height: double.infinity,
+                    width: double.infinity,
+                    fit: BoxFit.fill,
+                  ),
+                  SingleChildScrollView(
+                    reverse: true,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'Sign Up',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 38),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(60),
+                          child: Form(
+                            key: _formKey,
+                            child: Column(
+                              children: [
+                                TextFormField(
+                                  controller: _emailController,
+                                  decoration: const InputDecoration(
+                                    hintText: 'Email',
+                                    border: OutlineInputBorder(),
+                                  ),
+                                  autovalidateMode:
+                                      AutovalidateMode.onUserInteraction,
+                                  validator: (value) {
+                                    return value != null &&
+                                            !EmailValidator.validate(value)
+                                        ? 'Enter valid email'
+                                        : null;
                                   },
-                                  child: const Text('Sign Up'),
                                 ),
-                              ),
-                            ],
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                TextFormField(
+                                  controller: _passwordController,
+                                  obscureText: true,
+                                  decoration: const InputDecoration(
+                                    hintText: 'Password',
+                                    border: OutlineInputBorder(),
+                                  ),
+                                  autovalidateMode:
+                                      AutovalidateMode.onUserInteraction,
+                                  validator: (value) {
+                                    return value != null && value.length < 6
+                                        ? 'Enter in 6 chars password'
+                                        : null;
+                                  },
+                                ),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.7,
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      _createAccountWithEmailAndPassword(
+                                          context);
+                                    },
+                                    child: const Text('Sign Up'),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      Text(
-                        "Already have an account? ",
-                        style: TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.w300,
-                            fontSize: 14),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const LoginScreen()),
-                          );
-                        },
-                        child: Text(
-                          "Login",
+                        const Text(
+                          "Already have an account? ",
                           style: TextStyle(
-                              color: Colors.red,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15),
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w300,
+                              fontSize: 14),
                         ),
-                      ),
-                    ],
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const LoginScreen()),
+                            );
+                          },
+                          child: const Text(
+                            "Login",
+                            style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
+                ],
               ),
             );
           }

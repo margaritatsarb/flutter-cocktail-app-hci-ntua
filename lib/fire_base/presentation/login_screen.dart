@@ -29,23 +29,23 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         title: const Text('Cocktailer'),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.home),
+        child: const Icon(Icons.home),
         onPressed: () {
           Navigator.pop(context,
               MaterialPageRoute(builder: (context) => const HomePage()));
         },
-        backgroundColor: Color.fromARGB(255, 230, 57, 18),
+        backgroundColor: const Color.fromARGB(255, 230, 57, 18),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state is Authenticated) {
-            Navigator.pushReplacement(
-                context, MaterialPageRoute(builder: (context) => HomePage()));
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => const HomePage()));
           }
 
           if (state is AuthError) {
@@ -55,116 +55,126 @@ class _LoginScreenState extends State<LoginScreen> {
         },
         builder: (context, state) {
           if (state is Loading) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
           if (state is UnAuthenticated) {
             return Center(
-              child: Padding(
-                padding: EdgeInsets.all(60),
-                child: SingleChildScrollView(
-                  reverse: true,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Login',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 38),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Center(
-                        child: Form(
-                          key: _formKey,
-                          child: Column(
-                            children: [
-                              TextFormField(
-                                controller: _emailController,
-                                keyboardType: TextInputType.emailAddress,
-                                decoration: InputDecoration(
-                                    hintText: 'Email',
-                                    border: OutlineInputBorder()),
-                                autovalidateMode:
-                                    AutovalidateMode.onUserInteraction,
-                                validator: (value) {
-                                  return value != null &&
-                                          !EmailValidator.validate(value)
-                                      ? 'Invalid Email format'
-                                      : null;
-                                },
-                              ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              TextFormField(
-                                controller: _passwordController,
-                                obscureText: true,
-                                keyboardType: TextInputType.text,
-                                decoration: InputDecoration(
-                                    hintText: 'Password',
-                                    border: OutlineInputBorder()),
-                                autovalidateMode:
-                                    AutovalidateMode.onUserInteraction,
-                                validator: (value) {
-                                  return value != null && value.length < 6
-                                      ? 'Password less then 6 chars'
-                                      : null;
-                                },
-                              ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.7,
-                                child: ElevatedButton(
-                                  onPressed: () {
-                                    _authenticateUser(context);
+              child: Stack(
+                children: <Widget>[
+                  const Image(
+                    image: AssetImage('assets/images/bulb.jpg'),
+                    alignment: Alignment.center,
+                    height: double.infinity,
+                    width: double.infinity,
+                    fit: BoxFit.fill,
+                  ),
+                  SingleChildScrollView(
+                    reverse: true,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'Login',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 38),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(60),
+                          child: Form(
+                            key: _formKey,
+                            child: Column(
+                              children: [
+                                TextFormField(
+                                  controller: _emailController,
+                                  keyboardType: TextInputType.emailAddress,
+                                  decoration: const InputDecoration(
+                                      hintText: 'Email',
+                                      border: OutlineInputBorder()),
+                                  autovalidateMode:
+                                      AutovalidateMode.onUserInteraction,
+                                  validator: (value) {
+                                    return value != null &&
+                                            !EmailValidator.validate(value)
+                                        ? 'Invalid Email format'
+                                        : null;
                                   },
-                                  child: const Text('Login'),
                                 ),
-                              ),
-                              const SizedBox(
-                                height: 40,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "Don't have account? ",
-                                    style: TextStyle(
-                                        color: Colors.grey,
-                                        fontWeight: FontWeight.w300,
-                                        fontSize: 14),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      Navigator.pushReplacement(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const SignupScreen()),
-                                      );
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                TextFormField(
+                                  controller: _passwordController,
+                                  obscureText: true,
+                                  keyboardType: TextInputType.text,
+                                  decoration: const InputDecoration(
+                                      hintText: 'Password',
+                                      border: OutlineInputBorder()),
+                                  autovalidateMode:
+                                      AutovalidateMode.onUserInteraction,
+                                  validator: (value) {
+                                    return value != null && value.length < 6
+                                        ? 'Password less then 6 chars'
+                                        : null;
+                                  },
+                                ),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.7,
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      _authenticateUser(context);
                                     },
-                                    child: Text(
-                                      "Signup",
-                                      style: TextStyle(
-                                          color: Colors.red,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15),
-                                    ),
+                                    child: const Text('Login'),
                                   ),
-                                ],
-                              ),
-                            ],
+                                ),
+                                const SizedBox(
+                                  height: 40,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Text(
+                                      "Don't have account? ",
+                                      style: TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w300,
+                                          fontSize: 14),
+                                    ),
+                                    GestureDetector(
+                                      onTap: () {
+                                        Navigator.pushReplacement(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const SignupScreen()),
+                                        );
+                                      },
+                                      child: const Text(
+                                        "Signup",
+                                        style: TextStyle(
+                                            color: Colors.red,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
+                ],
               ),
             );
           }
@@ -172,37 +182,45 @@ class _LoginScreenState extends State<LoginScreen> {
             final user = FirebaseAuth.instance.currentUser;
             return Center(
               child: Padding(
-                padding: EdgeInsets.only(top: 60, left: 20),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Logged In',
-                      style: TextStyle(
-                        fontSize: 38,
-                        fontWeight: FontWeight.bold,
+                padding: const EdgeInsets.only(top: 60, left: 20),
+                child: Stack(
+                  children: <Widget>[
+                    const Image(
+                      image: AssetImage('assets/images/bulb.jpg'),
+                      alignment: Alignment.center,
+                      height: double.infinity,
+                      width: double.infinity,
+                      fit: BoxFit.fill,
+                    ),
+                    const Align(
+                      alignment: Alignment(0, -0.8),
+                      child: Text(
+                        'Logged In',
+                        style: TextStyle(
+                          fontSize: 38,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    Text(
-                      'Email: ${user?.email}',
-                      style: TextStyle(color: Colors.blue),
-                    ),
-                    const SizedBox(
-                      height: 50,
-                    ),
-                    SizedBox(
-                      height: 30,
-                      width: 100,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          context.read<AuthBloc>().add(SignoutRequest());
-                        },
-                        child: const Text('Logout'),
+                    Align(
+                      alignment: const Alignment(0, -0.4),
+                      child: Text(
+                        'Email: ${user?.email}',
+                        style: const TextStyle(color: Colors.black),
                       ),
-                    )
+                    ),
+                    Align(
+                        alignment: const Alignment(0, 0.0),
+                        child: SizedBox(
+                          height: 30,
+                          width: 100,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              context.read<AuthBloc>().add(SignoutRequest());
+                            },
+                            child: const Text('Logout'),
+                          ),
+                        ))
                   ],
                 ),
               ),

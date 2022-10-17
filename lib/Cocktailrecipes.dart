@@ -19,8 +19,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
         onVerticalDragUpdate: (details) {},
         onHorizontalDragUpdate: (details) {
           if (details.delta.direction > 0) {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => HomePage()));
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const HomePage()));
           }
         },
         child: Scaffold(
@@ -30,7 +30,7 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                 onPressed: () => Navigator.of(context).pop(),
               ),
               title: customSearchBar,
-              backgroundColor: Color.fromARGB(255, 255, 255, 255),
+              backgroundColor: const Color.fromARGB(255, 255, 255, 255),
               automaticallyImplyLeading: false,
               actions: [
                 IconButton(
@@ -58,7 +58,7 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                             MaterialPageRoute(
                                 builder: (context) => const Favorites()));
                       }),
-                  Spacer(),
+                  const Spacer(),
                   IconButton(
                       icon: const Icon(
                         Icons.shopping_cart,
@@ -73,22 +73,22 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                       })
                 ],
               ),
-              shape: CircularNotchedRectangle(),
+              shape: const CircularNotchedRectangle(),
             ),
             floatingActionButton: FloatingActionButton(
-              child: Icon(Icons.home),
+              child: const Icon(Icons.home),
               onPressed: () {
                 Navigator.pop(context,
                     MaterialPageRoute(builder: (context) => const HomePage()));
               },
-              backgroundColor: Color.fromARGB(255, 230, 57, 18),
+              backgroundColor: const Color.fromARGB(255, 230, 57, 18),
             ),
             floatingActionButtonLocation:
                 FloatingActionButtonLocation.centerDocked,
             body: Center(
                 child: Stack(
               children: <Widget>[
-                Image(
+                const Image(
                   image: AssetImage('assets/images/bulb.jpg'),
                   alignment: Alignment.center,
                   height: double.infinity,
@@ -96,12 +96,12 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                   fit: BoxFit.fill,
                 ),
                 Align(
-                  alignment: Alignment(-1, 0.35),
+                  alignment: const Alignment(-1, 0.35),
                   child: ListView(
                     children: <Widget>[
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Vodka Martini'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Vodka Martini'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -110,8 +110,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Pina Colantua'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Pina Colantua'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -120,8 +120,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Mojito'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Mojito'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -130,8 +130,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Flutter'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Flutter'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -140,8 +140,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Cosmopolitan'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Cosmopolitan'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -150,8 +150,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Margarita'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Margarita'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -160,8 +160,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Mai Tai'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Mai Tai'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -170,8 +170,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Bloody Mary'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Bloody Mary'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -180,8 +180,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Negroni'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Negroni'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -190,8 +190,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Queens Hotels Chow'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Queens Hotels Chow'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -201,8 +201,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Smoke and ginger sours'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Smoke and ginger sours'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -212,8 +212,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Hazelnut espresso martini'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Hazelnut espresso martini'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -223,8 +223,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Hurricane'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Hurricane'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -233,8 +233,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Instant rum eggnog'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Instant rum eggnog'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -244,8 +244,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Salted Caramel Espresso Martini'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Salted Caramel Espresso Martini'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -255,8 +255,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('April Rain Cocktail'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('April Rain Cocktail'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -266,8 +266,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Paloma'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Paloma'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -276,8 +276,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Lady grey rum fizz'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Lady grey rum fizz'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -287,8 +287,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Lemon Drop Martini'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Lemon Drop Martini'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -298,8 +298,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Jalapeno Margarita'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Jalapeno Margarita'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -309,8 +309,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Cucumber Wasabi Martini'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Cucumber Wasabi Martini'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -320,8 +320,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Mango Spice Cocktail'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Mango Spice Cocktail'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -331,8 +331,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Sweet Heat Cocktail'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Sweet Heat Cocktail'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -342,8 +342,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Tequila Cocoa Caliente'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Tequila Cocoa Caliente'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -353,8 +353,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Firecracker'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Firecracker'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -363,8 +363,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Spiced Hurricane'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Spiced Hurricane'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -374,8 +374,8 @@ class _Cocktailrecipes extends State<Cocktailrecipes> {
                         },
                       ),
                       ListTile(
-                        leading: Icon(Icons.local_drink),
-                        title: Text('Spicy Paloma'),
+                        leading: const Icon(Icons.local_drink),
+                        title: const Text('Spicy Paloma'),
                         onTap: () {
                           Navigator.push(
                               context,
@@ -432,7 +432,7 @@ class CustomSearchDelegate extends SearchDelegate {
         onPressed: () {
           query = '';
         },
-        icon: Icon(Icons.clear),
+        icon: const Icon(Icons.clear),
       ),
     ];
   }
@@ -444,7 +444,7 @@ class CustomSearchDelegate extends SearchDelegate {
       onPressed: () {
         close(context, null);
       },
-      icon: Icon(Icons.arrow_back),
+      icon: const Icon(Icons.arrow_back),
     );
   }
 

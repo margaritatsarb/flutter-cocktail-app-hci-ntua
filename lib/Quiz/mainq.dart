@@ -86,24 +86,24 @@ class _MyAppState extends State<Quizz> {
           )),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Cocktailer'),
-          titleTextStyle: TextStyle(
+          title: const Text('Cocktailer'),
+          titleTextStyle: const TextStyle(
             fontSize: 30.0,
             fontFamily: 'RockSalt',
             color: Color.fromARGB(255, 230, 57, 18),
           ),
           centerTitle: true,
           actionsIconTheme:
-              IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
+              const IconThemeData(color: Color.fromARGB(255, 230, 57, 18)),
           backgroundColor: Colors.white,
         ),
         floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.home),
+          child: const Icon(Icons.home),
           onPressed: () {
             Navigator.pop(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
           },
-          backgroundColor: Color.fromARGB(255, 230, 57, 18),
+          backgroundColor: const Color.fromARGB(255, 230, 57, 18),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         bottomNavigationBar: BottomAppBar(
@@ -121,7 +121,7 @@ class _MyAppState extends State<Quizz> {
                         MaterialPageRoute(
                             builder: (context) => const Favorites()));
                   }),
-              Spacer(),
+              const Spacer(),
               IconButton(
                   icon: const Icon(
                     Icons.shopping_cart,
@@ -136,18 +136,28 @@ class _MyAppState extends State<Quizz> {
                   })
             ],
           ),
-          shape: CircularNotchedRectangle(),
+          shape: const CircularNotchedRectangle(),
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(30.0),
-          child: _questionIndex < _questions.length
-              ? Quiz(
-                  answerQuestion: _answerQuestion,
-                  questionIndex: _questionIndex,
-                  questions: _questions,
-                )
-              : Result(_totalScore, _resetQuiz),
-        ),
+        body: Center(
+            child: Stack(children: <Widget>[
+          const Image(
+            image: AssetImage('assets/images/bulb.jpg'),
+            alignment: Alignment.center,
+            height: double.infinity,
+            width: double.infinity,
+            fit: BoxFit.fill,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(30.0),
+            child: _questionIndex < _questions.length
+                ? Quiz(
+                    answerQuestion: _answerQuestion,
+                    questionIndex: _questionIndex,
+                    questions: _questions,
+                  )
+                : Result(_totalScore, _resetQuiz),
+          )
+        ])),
       ),
       debugShowCheckedModeBanner: false,
     );

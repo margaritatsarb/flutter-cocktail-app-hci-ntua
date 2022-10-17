@@ -20,16 +20,16 @@ class _FavoritesState extends State<Favorites> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         title: const Text('Cocktailer'),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.home),
+        child: const Icon(Icons.home),
         onPressed: () {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => const HomePage()));
         },
-        backgroundColor: Color.fromARGB(255, 230, 57, 18),
+        backgroundColor: const Color.fromARGB(255, 230, 57, 18),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: Padding(
@@ -51,7 +51,7 @@ class _FavoritesState extends State<Favorites> {
                 style: const TextStyle(fontSize: 24),
               ),
               style: ElevatedButton.styleFrom(
-                  primary: Colors.red,
+                  backgroundColor: Colors.red,
                   padding: const EdgeInsets.symmetric(vertical: 20)),
             ),
             const SizedBox(
@@ -64,12 +64,12 @@ class _FavoritesState extends State<Favorites> {
                     final currentcocktail = cocktails[index];
                     return Card(
                       key: ValueKey(currentcocktail.title),
-                      color: Color.fromARGB(255, 255, 220, 213),
+                      color: const Color.fromARGB(255, 255, 220, 213),
                       elevation: 4,
                       child: ListTile(
                         title: Text(
                           currentcocktail.title,
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Color.fromARGB(255, 230, 57, 18)),
                         ),
                         trailing: IconButton(
