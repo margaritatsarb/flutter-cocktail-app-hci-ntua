@@ -32,15 +32,6 @@ class _LoginScreenState extends State<LoginScreen> {
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         title: const Text('Cocktailer'),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.home),
-        onPressed: () {
-          Navigator.pop(context,
-              MaterialPageRoute(builder: (context) => const HomePage()));
-        },
-        backgroundColor: const Color.fromARGB(255, 230, 57, 18),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state is Authenticated) {
